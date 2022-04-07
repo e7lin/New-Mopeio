@@ -18,15 +18,15 @@ import java.util.Random;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	//declaring variables
 	Random rnd = new Random();
-	
-	
+	Background bg1 = new Background(0,0);
+	Mouse testMouse = new Mouse(100,200);
 	//creating objects and object arrays  (STEP 1)
 	
 
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
-	
-
+		bg1.paint(g);
+		testMouse.paint(g);
 
 	}
 	
@@ -42,7 +42,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		
 		JFrame f = new JFrame("Mopeio");
-		f.setSize(new Dimension(1000, 500));
+		f.setSize(new Dimension(1900, 1000));
 		f.setBackground(Color.blue);
 		f.add(this);
 		f.setResizable(false);
@@ -93,22 +93,28 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		// TODO Auto-generated method stub
 			System.out.println(arg0.getKeyCode());
 			//arrow keys are used for moving pony up and down
-			/*if(arg0.getKeyCode() == 38) {
-				up
+			if(arg0.getKeyCode() == 38) {
+				testMouse.up();
 			}
 			if(arg0.getKeyCode() == 40) {
-				down
+				testMouse.down();
+			}
+			if(arg0.getKeyCode() == 39) {
+				testMouse.right();
+			}
+			if(arg0.getKeyCode() == 37) {
+				testMouse.left();
 			}
 			if(arg0.getKeyCode() == 72) { //press h to show hitboxes
 				
 			}
 			if(arg0.getKeyCode() == 83) { //press s to increase score by 10, for testing
-				s
+				//s
 			}
 			if(arg0.getKeyCode() == 82) { //press r to restart after losing
-				r
+				//r
 			}
-			*/
+			
 	}
 
 	@Override
