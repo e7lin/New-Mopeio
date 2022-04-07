@@ -19,14 +19,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//declaring variables
 	Random rnd = new Random();
 	Background bg1 = new Background(0,0);
-	Mouse testMouse = new Mouse(100,200);
+	Animal testAnimal = new Mouse(100,200);
 	//creating objects and object arrays  (STEP 1)
 	
 
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
 		bg1.paint(g);
-		testMouse.paint(g);
+		testAnimal.paint(g);
 
 	}
 	
@@ -94,22 +94,23 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			System.out.println(arg0.getKeyCode());
 			//arrow keys are used for moving pony up and down
 			if(arg0.getKeyCode() == 38) {
-				testMouse.up();
+				testAnimal.up();
 			}
 			if(arg0.getKeyCode() == 40) {
-				testMouse.down();
+				testAnimal.down();
 			}
 			if(arg0.getKeyCode() == 39) {
-				testMouse.right();
+				testAnimal.right();
 			}
 			if(arg0.getKeyCode() == 37) {
-				testMouse.left();
+				testAnimal.left();
 			}
 			if(arg0.getKeyCode() == 72) { //press h to show hitboxes
 				
 			}
 			if(arg0.getKeyCode() == 83) { //press s to increase score by 10, for testing
-				//s
+				Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
+				testAnimal = temp;
 			}
 			if(arg0.getKeyCode() == 82) { //press r to restart after losing
 				//r

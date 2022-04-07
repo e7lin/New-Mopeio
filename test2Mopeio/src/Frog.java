@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Mouse extends Animal{
+public class Frog extends Animal{
 	//attributes
 	public int x,y;
 	public int vy = 0;
@@ -16,12 +16,12 @@ public class Mouse extends Animal{
 	private AffineTransform tx;
 	private double scaleW = 1.0, scaleH = 1.0;
 	
-	public Mouse() {//default constructor
+	public Frog() {//default constructor
 		
 	}
 	
-	public Mouse(int x,int y) {//non default constructor
-		img = getImage("Mouse.png");   
+	public Frog(int x,int y) {//non default constructor
+		img = getImage("Frog.png");   
 		
 		this.x = x;
 		this.y = y;
@@ -69,20 +69,20 @@ public class Mouse extends Animal{
 	}
 
 public void up() {
-	img = getImage("Mouse.png");
+	img = getImage("Frog.png");
 	y-=10;
 }
 public void down() {
-	img = getImage("MouseD.png");   
+	img = getImage("FrogD.png");   
 	y+=10;
 
 }
 public void left() {
-	img = getImage("MouseL.png");
+	img = getImage("FrogL.png");
 	x-=10;
 }
 public void right() {
-	img = getImage("MouseR.png");
+	img = getImage("FrogR.png");
 	x+=10;
 }
 private void update() {
