@@ -21,13 +21,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Background bg1 = new Background(0,0);
 	Animal testAnimal = new Mouse(100,200);
 	//creating objects and object arrays  (STEP 1)
-	
+	private int level = 0;
+	private boolean evo = false;
 
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
 		bg1.paint(g);
 		testAnimal.paint(g);
-
+		
+		
+		
+		
+		//trying to make a simple evolution thing
+		if(level == 0) {
+			
+		}else if(level == 1 && evo) {
+			Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}else if(level == 2 && evo) {
+			Animal temp = new Pig(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}else if(level == 3 && evo) {
+			Animal temp = new Otter(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}//end
+		
 	}
 	
 	
@@ -39,7 +60,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 	
 	public Frame() {
-		
 		
 		JFrame f = new JFrame("Mopeio");
 		f.setSize(new Dimension(1900, 1000));
@@ -109,8 +129,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				
 			}
 			if(arg0.getKeyCode() == 83) { //press s to increase score by 10, for testing
-				Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
-				testAnimal = temp;
+				level++;
+				evo = true;
 			}
 			if(arg0.getKeyCode() == 82) { //press r to restart after losing
 				//r

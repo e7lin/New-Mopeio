@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Frog extends Animal{
+public class Pig extends Animal{
 	//attributes
 	public int x,y;
 	public int vy = 0;
@@ -16,12 +16,12 @@ public class Frog extends Animal{
 	private AffineTransform tx;
 	private double scaleW = 1.0, scaleH = 1.0;
 	
-	public Frog() {//default constructor
+	public Pig() {//default constructor
 		
 	}
 	
-	public Frog(int x,int y) {//non default constructor
-		img = getImage("Frog.png");   
+	public Pig(int x,int y) {//non default constructor
+		img = getImage("Pig.png");   
 		
 		this.x = x;
 		this.y = y;
@@ -69,25 +69,26 @@ public class Frog extends Animal{
 	}
 
 public void up() {
-	img = getImage("Frog.png");
+	img = getImage("Pig.png");
 	y-=10;
 }
 public void down() {
-	img = getImage("FrogD.png");   
+	img = getImage("PigD.png");   
 	y+=10;
 
 }
 public void left() {
-	img = getImage("FrogL.png");
+	img = getImage("PigL.png");
 	x-=10;
 }
 public void right() {
-	img = getImage("FrogR.png");
+	img = getImage("PigR.png");
 	x+=10;
 }
 public void update() {
 		
-	
+	tx.setToTranslation(x, y);
+	tx.scale(1	, 1);
 
 	/**
 	 * Code here will prevent player from leaving screen

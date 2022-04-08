@@ -87,7 +87,7 @@ public class Animal {
 	}
 	
 	
-	private void update() {
+	protected void update() {
 			
 		tx.setToTranslation(x, y);
 		tx.scale(1	, 1);
@@ -96,13 +96,13 @@ public class Animal {
 		 * Code here will prevent player from leaving screen
 		 */
 		
-		//if(y+70>500) {
-		//	y-=70;
-		//}
-		//if(y<50) {
-		//	y+=70;
+		if(y+70>500) {
+			y-=70;
+		}
+		if(y<50) {
+			y+=70;
 			
-		//}
+		}
 		
 		
 		}

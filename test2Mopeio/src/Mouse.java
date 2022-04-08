@@ -85,7 +85,7 @@ public void right() {
 	img = getImage("MouseR.png");
 	x+=10;
 }
-private void update() {
+public void update() {
 		
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
