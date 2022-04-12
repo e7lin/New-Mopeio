@@ -47,7 +47,28 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Animal temp = new Otter(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
-		}//end
+		}else if(level == 4 && evo) {
+			Animal temp = new Vulture(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}else if(level == 5 && evo) {
+			Animal temp = new Buffalo(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}else if(level == 6 && evo) {
+			Animal temp = new Hippo(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}else if(level == 7 && evo) {
+			Animal temp = new Tiger(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}/*else if(level == 8 && evo) {
+			Animal temp = new Lion(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}*/
+		//end
 		
 	}
 	
@@ -128,8 +149,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			if(arg0.getKeyCode() == 72) { //press h to show hitboxes
 				
 			}
-			if(arg0.getKeyCode() == 83) { //press s to increase score by 10, for testing
+			if(arg0.getKeyCode() == 83) { //press s to evolve, for testing
 				level++;
+				evo = true;
+			}
+			if(arg0.getKeyCode() == 68) { //press D to decrease 1 evolution, for testing
+				level--;
 				evo = true;
 			}
 			if(arg0.getKeyCode() == 82) { //press r to restart after losing
