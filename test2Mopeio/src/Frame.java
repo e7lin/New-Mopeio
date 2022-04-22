@@ -20,6 +20,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Random rnd = new Random();
 	Background bg1 = new Background(0,0);
 	Animal testAnimal = new Mouse(100,200);
+	Lava lavaPool = new Lava(600,200);
 	//creating objects and object arrays  (STEP 1)
 	private int level = 0;
 	private boolean evo = false;
@@ -27,9 +28,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
 		bg1.paint(g);
+		lavaPool.paint(g);
 		testAnimal.paint(g);
-		
-		
+				
 		
 		
 		//trying to make a simple evolution thing
@@ -65,6 +66,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			evo = false;
 		}else if(level == 8 && evo) {
 			Animal temp = new Lion(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
+		}else if(level == 9 && evo) {
+			Animal temp = new Dragon(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 		}

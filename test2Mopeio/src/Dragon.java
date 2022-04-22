@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Otter extends Animal{
+public class Dragon extends Animal{
 	//attributes
 	public int x,y;
 	public int vy = 0;
@@ -16,12 +16,12 @@ public class Otter extends Animal{
 	private AffineTransform tx;
 	private double scaleW = 1.0, scaleH = 1.0;
 	
-	public Otter() {//default constructor
+	public Dragon() {//default constructor
 		
 	}
 	
-	public Otter(int x,int y) {//non default constructor
-		img = getImage("Otter.png");   
+	public Dragon(int x,int y) {//non default constructor
+		img = getImage("Dragon.png");   
 		
 		this.x = x;
 		this.y = y;
@@ -69,20 +69,20 @@ public class Otter extends Animal{
 	}
 
 public void up() {
-	img = getImage("Otter.png");
+	img = getImage("Dragon.png");
 	y-=10;
 }
 public void down() {
-	img = getImage("OtterD.png");   
+	img = getImage("DragonD.png");   
 	y+=10;
 
 }
 public void left() {
-	img = getImage("OtterL.png");
+	img = getImage("DragonL.png");
 	x-=10;
 }
 public void right() {
-	img = getImage("OtterR.png");
+	img = getImage("DragonR.png");
 	x+=10;
 }
 public void update() {
@@ -90,9 +90,10 @@ public void update() {
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
 
+	/**
+	 * Code here will prevent player from leaving screen
+	 */
 	
-	
-
 	if(y+130>1000) {
 		y-=10;
 	}
@@ -105,7 +106,6 @@ public void update() {
 	if(x+120>1900) {
 		x-=10;
 	}
-
 	
 	
 	}

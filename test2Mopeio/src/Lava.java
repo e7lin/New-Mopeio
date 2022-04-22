@@ -1,12 +1,14 @@
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.geom.AffineTransform;
-import java.net.URL;
 
-public class Animal {
-	//attributes
+
+	import java.awt.Graphics;
+	import java.awt.Graphics2D;
+	import java.awt.Image;
+	import java.awt.Toolkit;
+	import java.awt.geom.AffineTransform;
+	import java.net.URL;
+
+	public class Lava extends Animal{
+		//attributes
 		public int x,y;
 		public int vy = 0;
 		private String fileName;
@@ -14,14 +16,14 @@ public class Animal {
 		//for image stuff
 		private Image img; 	
 		private AffineTransform tx;
-		private double scaleW = 1.0, scaleH = 1.0;
+		private double scaleW = 1.5, scaleH = 1.5;
 		
-		public Animal() {//default constructor
+		public Lava() {//default constructor
 			
 		}
 		
-		public Animal(int x,int y) {//non default constructor
-			img = getImage("Mouse.png");   //need to do something with this
+		public Lava(int x,int y) {//non default constructor
+			img = getImage("Lava.png");   
 			
 			this.x = x;
 			this.y = y;
@@ -59,6 +61,7 @@ public class Animal {
 			}
 			return tempImage;
 		}
+		
 		public void paint(Graphics g) {
 			//these are the 2 lines of code needed draw an image on the screen
 			Graphics2D g2 = (Graphics2D) g;
@@ -68,51 +71,13 @@ public class Animal {
 			g2.drawImage(img, tx, null);
 		}
 
-	public void up() {
-		//img = getImage("Mouse.png");
-		y-=10;
-	}
-	public void down() {
-		//img = getImage("MouseD.png");   
-		y+=10;
-
-	}
-	public void left() {
-		//img = getImage("MouseL.png");
-		x-=10;
-	}
-	public void right() {
-		//img = getImage("MouseR.png");
-		x+=10;
-	}
-	
 	
 	public void update() {
 			
 		tx.setToTranslation(x, y);
-		tx.scale(1	, 1);
-		//i have no idea what this tx stuff does and it's causing errors in the inheritance code    
-		
-		
-		/**
-		 * Code here will prevent player from leaving screen
-		 */
-		
-		if(y+130>1000) {
-			y-=10;
-		}
-		if(y<10) {
-			y+=10;	
-		}
-		if(x<10) {
-			x+=10;
-		}
-		if(x+120>1900) {
-			x-=10;
-		}
-		
-		
-		
+		tx.scale(1.5	, 1.5);
 		
 		}
-}
+	}
+
+

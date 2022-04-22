@@ -68,38 +68,44 @@ public class Frog extends Animal{
 		g2.drawImage(img, tx, null);
 	}
 
-public void up() {
-	img = getImage("Frog.png");
-	y-=10;
-}
-public void down() {
-	img = getImage("FrogD.png");   
-	y+=10;
+	public void up() {
+		img = getImage("Frog.png");
+		y-=10;
+	}
+	public void down() {
+		img = getImage("FrogD.png");   
+		y+=10;
+		
+	}
+	public void left() {
+		img = getImage("FrogL.png");
+		x-=10;
+	}
+	public void right() {
+		img = getImage("FrogR.png");
+		x+=10;
+	}
+	
+	public void update() {
+		
+		tx.setToTranslation(x, y);
+		tx.scale(1	, 1);
 
-}
-public void left() {
-	img = getImage("FrogL.png");
-	x-=10;
-}
-public void right() {
-	img = getImage("FrogR.png");
-	x+=10;
-}
-public void update() {
+		
 		
 	
-
-	/**
-	 * Code here will prevent player from leaving screen
-	 */
-	
-	//if(y+70>500) {
-	//	y-=70;
-	//}
-	//if(y<50) {
-	//	y+=70;
-		
-	//}
+		if(y+130>1000) {
+			y-=10;
+		}
+		if(y<10) {
+			y+=10;	
+		}
+		if(x<10) {
+			x+=10;
+		}
+		if(x+120>1900) {
+			x-=10;
+		}
 	
 	
 	}

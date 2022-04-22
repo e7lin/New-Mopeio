@@ -90,17 +90,22 @@ public void update() {
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
 
-	/**
-	 * Code here will prevent player from leaving screen
-	 */
 	
-	//if(y+70>500) {
-	//	y-=70;
-	//}
-	//if(y<50) {
-	//	y+=70;
-		
-	//}
+	
+
+	if(y+130>1000) {
+		y-=10;
+	}
+	if(y<10) {
+		y+=10;	
+	}
+	if(x<10) {
+		x+=10;
+	}
+	if(x+120>1900) {
+		x-=10;
+	}
+
 	
 	
 	}
