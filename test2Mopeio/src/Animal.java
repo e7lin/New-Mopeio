@@ -10,6 +10,7 @@ public class Animal {
 		public int x,y;
 		public int vy = 0;
 		private String fileName;
+		private int hp;
 		
 		//for image stuff
 		private Image img; 	
@@ -33,6 +34,14 @@ public class Animal {
 		private void init(double a, double b) {
 			tx.setToTranslation(a, b);
 			tx.scale(scaleW, scaleH);
+		}
+		
+		public int getHP() {
+			return hp;
+		}
+		
+		public void setHP(int hp) {
+			this.hp = hp;
 		}
 		
 		public int getX() {//getter (accessor)
@@ -85,6 +94,7 @@ public class Animal {
 		//img = getImage("MouseR.png");
 		x+=10;
 	}
+	
 	
 	
 	public void update() {

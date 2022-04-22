@@ -30,53 +30,79 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		bg1.paint(g);
 		lavaPool.paint(g);
 		testAnimal.paint(g);
-				
+		
 		
 		
 		//trying to make a simple evolution thing
 		if(level == 0) {
-			
+			testAnimal.setHP(10);
+
 		}else if(level == 1 && evo) {
 			Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(20);
+			System.out.println(testAnimal.getHP());
 		}else if(level == 2 && evo) {
 			Animal temp = new Pig(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(30);
+
 		}else if(level == 3 && evo) {
 			Animal temp = new Otter(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(40);
+
 		}else if(level == 4 && evo) {
 			Animal temp = new Vulture(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(50);
+
 		}else if(level == 5 && evo) {
 			Animal temp = new Buffalo(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(60);
+
 		}else if(level == 6 && evo) {
 			Animal temp = new Hippo(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(70);
+
 		}else if(level == 7 && evo) {
 			Animal temp = new Tiger(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(80);
+
 		}else if(level == 8 && evo) {
 			Animal temp = new Lion(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(90);
+
 		}else if(level == 9 && evo) {
 			Animal temp = new Dragon(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(100);
+
 		}
 		//end of evolution code
 		
 		
-		
+		if(testAnimal.getHP() == 0) {
+			g.setFont(g.getFont().deriveFont(150f));
+			
+			g.fillRect(650, 500, 750, 200);
+			Color c = new Color(237, 0, 0);
+			g.setColor(c);
+			g.drawString("You Died!", 700,650);
+		}
 		
 	}//end of paint
 	
@@ -140,7 +166,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-			System.out.println(arg0.getKeyCode());
+		//	System.out.println(arg0.getKeyCode());
 			//arrow keys are used for moving pony up and down
 			if(arg0.getKeyCode() == 38) {
 				testAnimal.up();
@@ -165,8 +191,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				level--;
 				evo = true;
 			}
-			if(arg0.getKeyCode() == 82) { //press r to restart after losing
-				//r
+			if(arg0.getKeyCode() == 67) { //press c to decrement hp 10
+				testAnimal.setHP(testAnimal.getHP()-10);
+				System.out.println("ouch");
+
+				System.out.println(testAnimal.getHP());
+				
 			}
 			
 	}
