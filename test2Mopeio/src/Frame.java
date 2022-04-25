@@ -21,6 +21,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Background bg1 = new Background(0,0);
 	Animal testAnimal = new Mouse(100,200);
 	Lava lavaPool = new Lava(600,200);
+	BerryBush berryBush1 = new BerryBush(100, 350);
 	//creating objects and object arrays  (STEP 1)
 	private int level = 0;
 	private boolean evo = false;
@@ -30,6 +31,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		bg1.paint(g);
 		lavaPool.paint(g);
 		testAnimal.paint(g);
+		berryBush1.paint(g);
+		
+		
+		//time interval for spawn of berries
+		
+		
 		
 		
 		
@@ -209,6 +216,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 			
 	}
+	
+	
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {

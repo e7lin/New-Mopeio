@@ -7,7 +7,7 @@
 	import java.awt.geom.AffineTransform;
 	import java.net.URL;
 
-	public class Lava extends Animal{
+	public class Lava {
 		//attributes
 		public int x,y;
 		public int vy = 0;
