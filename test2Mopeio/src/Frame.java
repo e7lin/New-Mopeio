@@ -104,6 +104,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			g.drawString("You Died!", 700,650);
 		}
 		
+		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440) {
+			testAnimal.setVx(3);
+			//testAnimal.setVy(1);
+		}
+		
 	}//end of paint
 	
 	
@@ -166,7 +171,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		//	System.out.println(arg0.getKeyCode());
+			System.out.println(arg0.getKeyCode());
 			//arrow keys are used for moving pony up and down
 			if(arg0.getKeyCode() == 38) {
 				testAnimal.up();
@@ -180,9 +185,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			if(arg0.getKeyCode() == 37) {
 				testAnimal.left();
 			}
-			if(arg0.getKeyCode() == 72) { //press h to show hitboxes
-				
+			if(arg0.getKeyCode() == 89) { //press y
+				System.out.println(testAnimal.getY());
 			}
+			if(arg0.getKeyCode() == 88) { //press y
+				System.out.println(testAnimal.getX());
+			}
+
 			if(arg0.getKeyCode() == 83) { //press s to evolve, for testing
 				level++;
 				evo = true;

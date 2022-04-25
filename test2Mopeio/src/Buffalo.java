@@ -9,6 +9,7 @@ public class Buffalo extends Animal{
 	//attributes
 	public int x,y;
 	public int vy = 0;
+	private int vx = 10;
 	private String fileName;
 	
 	//for image stuff
@@ -45,6 +46,11 @@ public class Buffalo extends Animal{
 	public void setX(int newX) {//setter (mutator)
 		x = newX;
 	}
+	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -79,11 +85,11 @@ public void down() {
 }
 public void left() {
 	img = getImage("BuffaloL.png");
-	x-=10;
+	x-=vx;
 }
 public void right() {
 	img = getImage("BuffaloR.png");
-	x+=10;
+	x+=vx;
 }
 public void update() {
 		

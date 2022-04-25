@@ -11,6 +11,7 @@ public class Vulture extends Animal{
 	public int x,y;
 	public int vy = 0;
 	private String fileName;
+	private int vx = 10;
 	
 	//for image stuff
 	private Image img; 	
@@ -30,7 +31,9 @@ public class Vulture extends Animal{
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 	}
-	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
 		tx.scale(scaleW, scaleH);

@@ -10,7 +10,8 @@ public class Pig extends Animal{
 	public int x,y;
 	public int vy = 0;
 	private String fileName;
-	
+	private int vx = 10;
+
 	//for image stuff
 	private Image img; 	
 	private AffineTransform tx;
@@ -41,7 +42,9 @@ public class Pig extends Animal{
 	public int getY() {
 		return y;
 	}
-	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
 	public void setX(int newX) {//setter (mutator)
 		x = newX;
 	}

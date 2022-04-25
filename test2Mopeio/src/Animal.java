@@ -11,7 +11,8 @@ public class Animal {
 		public int vy = 0;
 		private String fileName;
 		private int hp;
-		
+		private int vx = 10;
+
 		//for image stuff
 		private Image img; 	
 		private AffineTransform tx;
@@ -39,6 +40,10 @@ public class Animal {
 		public int getHP() {
 			return hp;
 		}
+		public void setVx(int newVx) {
+			vx = newVx;
+		}
+		
 		
 		public void setHP(int hp) {
 			this.hp = hp;

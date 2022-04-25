@@ -10,7 +10,8 @@ public class Hippo extends Animal{
 	public int x,y;
 	public int vy = 0;
 	private String fileName;
-	
+	private int vx = 10;
+
 	//for image stuff
 	private Image img; 	
 	private AffineTransform tx;
@@ -34,7 +35,9 @@ public class Hippo extends Animal{
 		tx.setToTranslation(a, b);
 		tx.scale(scaleW, scaleH);
 	}
-	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
 	public int getX() {//getter (accessor)
 		return x;
 	}
