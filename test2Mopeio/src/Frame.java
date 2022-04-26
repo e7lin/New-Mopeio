@@ -22,6 +22,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Animal testAnimal = new Mouse(100,200);
 	Lava lavaPool = new Lava(600,200);
 	BerryBush berryBush1 = new BerryBush(100, 350);
+	
+	Berry [] bushel = new Berry[3];
+	
+	
 	//creating objects and object arrays  (STEP 1)
 	private int level = 0;
 	private boolean evo = false;
@@ -35,8 +39,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		
 		//time interval for spawn of berries
-		
-		
 		
 		
 		
