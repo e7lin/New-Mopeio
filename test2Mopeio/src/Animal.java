@@ -8,7 +8,7 @@ import java.net.URL;
 public class Animal {
 	//attributes
 		public int x,y;
-		public int vy = 0;
+		private int vy = 10;
 		private String fileName;
 		private int hp;
 		private int vx = 10;
@@ -42,6 +42,10 @@ public class Animal {
 		}
 		public void setVx(int newVx) {
 			vx = newVx;
+		}
+		
+		public void setVy(int newVy) {
+			vy = newVy;
 		}
 		
 		

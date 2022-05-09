@@ -8,10 +8,11 @@ import java.net.URL;
 public class Lion extends Animal{
 	//attributes
 	public int x,y;
-	public int vy = 0;
-	private String fileName;
 	private int vx = 10;
+	private int vy = 10;
 
+	private String fileName;
+	
 	//for image stuff
 	private Image img; 	
 	private AffineTransform tx;
@@ -42,12 +43,19 @@ public class Lion extends Animal{
 	public int getY() {
 		return y;
 	}
-	public void setVx(int newVx) {
-		vx = newVx;
-	}
+	
 	public void setX(int newX) {//setter (mutator)
 		x = newX;
 	}
+	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
+	
+	public void setVy(int newVy) {
+		vy = newVy;
+	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -73,20 +81,20 @@ public class Lion extends Animal{
 
 public void up() {
 	img = getImage("Lion.png");
-	y-=10;
+	y-=vy;
 }
 public void down() {
 	img = getImage("LionD.png");   
-	y+=10;
+	y+=vy;
 
 }
 public void left() {
 	img = getImage("LionL.png");
-	x-=10;
+	x-=vx;
 }
 public void right() {
 	img = getImage("LionR.png");
-	x+=10;
+	x+=vx;
 }
 public void update() {
 		
@@ -109,6 +117,7 @@ public void update() {
 		x-=10;
 	}
 
+	
 	
 	}
 }

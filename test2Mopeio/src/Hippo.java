@@ -8,10 +8,11 @@ import java.net.URL;
 public class Hippo extends Animal{
 	//attributes
 	public int x,y;
-	public int vy = 0;
-	private String fileName;
 	private int vx = 10;
+	private int vy = 10;
 
+	private String fileName;
+	
 	//for image stuff
 	private Image img; 	
 	private AffineTransform tx;
@@ -35,9 +36,7 @@ public class Hippo extends Animal{
 		tx.setToTranslation(a, b);
 		tx.scale(scaleW, scaleH);
 	}
-	public void setVx(int newVx) {
-		vx = newVx;
-	}
+	
 	public int getX() {//getter (accessor)
 		return x;
 	}
@@ -48,6 +47,15 @@ public class Hippo extends Animal{
 	public void setX(int newX) {//setter (mutator)
 		x = newX;
 	}
+	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
+	
+	public void setVy(int newVy) {
+		vy = newVy;
+	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -73,20 +81,20 @@ public class Hippo extends Animal{
 
 public void up() {
 	img = getImage("Hippo.png");
-	y-=10;
+	y-=vy;
 }
 public void down() {
 	img = getImage("HippoD.png");   
-	y+=10;
+	y+=vy;
 
 }
 public void left() {
 	img = getImage("HippoL.png");
-	x-=10;
+	x-=vx;
 }
 public void right() {
 	img = getImage("HippoR.png");
-	x+=10;
+	x+=vx;
 }
 public void update() {
 		

@@ -1,4 +1,3 @@
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -9,9 +8,10 @@ import java.net.URL;
 public class Vulture extends Animal{
 	//attributes
 	public int x,y;
-	public int vy = 0;
-	private String fileName;
 	private int vx = 10;
+	private int vy = 10;
+
+	private String fileName;
 	
 	//for image stuff
 	private Image img; 	
@@ -31,9 +31,7 @@ public class Vulture extends Animal{
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 	}
-	public void setVx(int newVx) {
-		vx = newVx;
-	}
+	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
 		tx.scale(scaleW, scaleH);
@@ -49,6 +47,15 @@ public class Vulture extends Animal{
 	public void setX(int newX) {//setter (mutator)
 		x = newX;
 	}
+	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
+	
+	public void setVy(int newVy) {
+		vy = newVy;
+	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -74,20 +81,20 @@ public class Vulture extends Animal{
 
 public void up() {
 	img = getImage("Vulture.png");
-	y-=10;
+	y-=vy;
 }
 public void down() {
 	img = getImage("VultureD.png");   
-	y+=10;
+	y+=vy;
 
 }
 public void left() {
 	img = getImage("VultureL.png");
-	x-=10;
+	x-=vx;
 }
 public void right() {
 	img = getImage("VultureR.png");
-	x+=10;
+	x+=vx;
 }
 public void update() {
 		

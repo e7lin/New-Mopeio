@@ -113,9 +113,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			g.drawString("You Died!", 700,650);
 		}
 		
-		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440) {
+		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440 && level != 6 && level != 3 && level != 1) {
 			testAnimal.setVx(3);
+			testAnimal.setVy(3);
+
 			//testAnimal.setVy(1);
+		}else {
+			testAnimal.setVx(10);
+			testAnimal.setVy(10);
 		}
 		
 	}//end of paint

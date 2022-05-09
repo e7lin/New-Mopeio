@@ -8,10 +8,11 @@ import java.net.URL;
 public class Dragon extends Animal{
 	//attributes
 	public int x,y;
-	public int vy = 0;
-	private String fileName;
 	private int vx = 10;
+	private int vy = 10;
 
+	private String fileName;
+	
 	//for image stuff
 	private Image img; 	
 	private AffineTransform tx;
@@ -39,9 +40,6 @@ public class Dragon extends Animal{
 	public int getX() {//getter (accessor)
 		return x;
 	}
-	public void setVx(int newVx) {
-		vx = newVx;
-	}
 	public int getY() {
 		return y;
 	}
@@ -49,6 +47,15 @@ public class Dragon extends Animal{
 	public void setX(int newX) {//setter (mutator)
 		x = newX;
 	}
+	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
+	
+	public void setVy(int newVy) {
+		vy = newVy;
+	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -74,30 +81,29 @@ public class Dragon extends Animal{
 
 public void up() {
 	img = getImage("Dragon.png");
-	y-=10;
+	y-=vy;
 }
 public void down() {
 	img = getImage("DragonD.png");   
-	y+=10;
+	y+=vy;
 
 }
 public void left() {
 	img = getImage("DragonL.png");
-	x-=10;
+	x-=vx;
 }
 public void right() {
 	img = getImage("DragonR.png");
-	x+=10;
+	x+=vx;
 }
 public void update() {
 		
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
 
-	/**
-	 * Code here will prevent player from leaving screen
-	 */
 	
+	
+
 	if(y+130>1000) {
 		y-=10;
 	}
@@ -110,6 +116,7 @@ public void update() {
 	if(x+120>1900) {
 		x-=10;
 	}
+
 	
 	
 	}

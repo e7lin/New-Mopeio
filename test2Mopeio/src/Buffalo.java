@@ -8,8 +8,9 @@ import java.net.URL;
 public class Buffalo extends Animal{
 	//attributes
 	public int x,y;
-	public int vy = 0;
 	private int vx = 10;
+	private int vy = 10;
+
 	private String fileName;
 	
 	//for image stuff
@@ -51,6 +52,10 @@ public class Buffalo extends Animal{
 		vx = newVx;
 	}
 	
+	public void setVy(int newVy) {
+		vy = newVy;
+	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -76,11 +81,11 @@ public class Buffalo extends Animal{
 
 public void up() {
 	img = getImage("Buffalo.png");
-	y-=10;
+	y-=vy;
 }
 public void down() {
 	img = getImage("BuffaloD.png");   
-	y+=10;
+	y+=vy;
 
 }
 public void left() {
@@ -95,6 +100,9 @@ public void update() {
 		
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
+	
+	
+	
 
 	
 	

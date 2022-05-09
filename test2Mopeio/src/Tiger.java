@@ -8,10 +8,11 @@ import java.net.URL;
 public class Tiger extends Animal{
 	//attributes
 	public int x,y;
-	public int vy = 0;
-	private String fileName;
 	private int vx = 10;
+	private int vy = 10;
 
+	private String fileName;
+	
 	//for image stuff
 	private Image img; 	
 	private AffineTransform tx;
@@ -35,9 +36,7 @@ public class Tiger extends Animal{
 		tx.setToTranslation(a, b);
 		tx.scale(scaleW, scaleH);
 	}
-	public void setVx(int newVx) {
-		vx = newVx;
-	}
+	
 	public int getX() {//getter (accessor)
 		return x;
 	}
@@ -48,6 +47,15 @@ public class Tiger extends Animal{
 	public void setX(int newX) {//setter (mutator)
 		x = newX;
 	}
+	
+	public void setVx(int newVx) {
+		vx = newVx;
+	}
+	
+	public void setVy(int newVy) {
+		vy = newVy;
+	}
+	
 	public void setY(int y) {
 		this.y = y;
 	}
@@ -73,20 +81,20 @@ public class Tiger extends Animal{
 
 public void up() {
 	img = getImage("Tiger.png");
-	y-=10;
+	y-=vy;
 }
 public void down() {
 	img = getImage("TigerD.png");   
-	y+=10;
+	y+=vy;
 
 }
 public void left() {
 	img = getImage("TigerL.png");
-	x-=10;
+	x-=vx;
 }
 public void right() {
 	img = getImage("TigerR.png");
-	x+=10;
+	x+=vx;
 }
 public void update() {
 		
