@@ -24,6 +24,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	BerryBush berryBush1 = new BerryBush(100, 350);
 	
 	Berry [] bushel = new Berry[3];
+	Berry[] berries = new Berry[4];
 	
 	
 	//creating objects and object arrays  (STEP 1)
@@ -36,6 +37,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		lavaPool.paint(g);
 		testAnimal.paint(g);
 		berryBush1.paint(g);
+	    for(int i = 0; i < berries.length; i++) {
+	    	berries[i].paint(g);
+	    }
 		
 		
 		//time interval for spawn of berries
@@ -134,6 +138,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 	
 	public Frame() {
+		// 70 to 500 for first berry bush x; y will be from 70 down to 500
+		
+		for(int i = 0; i < berries.length; i++) {
+			int xValue = (int)(Math.random()*100) + 10;
+			int yValue = (int)(Math.random()*200) + 40;
+		    berries[i] = new Berry(xValue, yValue);
+		}
 		
 		JFrame f = new JFrame("Mopeio");
 		f.setSize(new Dimension(1900, 1000));
