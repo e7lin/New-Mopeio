@@ -25,6 +25,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Berry[] berries = new Berry[7];
 	
 	
+	
 	//creating objects and object arrays  (STEP 1)
 	private int level = 0;
 	private boolean evo = false;

@@ -1,18 +1,20 @@
 
 public class Timer {
 
-	private int times;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
-
+	public static int times;
+	public static int increment = 0;
 	
-	public void FixedIntervalRate(int delay, int time) {
-		times = time;
+	public void FixedIntervalRate() {
 		times+=1;
+	while(increment <= 7) {
 		if(times%5 == 0) {
-			//insert condition 
-		}
+			increment = increment+1;
+		}	
+	}
 	}
 }
