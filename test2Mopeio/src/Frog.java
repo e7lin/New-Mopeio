@@ -100,7 +100,7 @@ public void update() {
 		
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
-
+	
 	
 	
 

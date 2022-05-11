@@ -21,30 +21,40 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Background bg1 = new Background(0,0);
 	Animal testAnimal = new Mouse(100,200);
 	Lava lavaPool = new Lava(600,200);
-	
+	MyTimer test = new MyTimer();
 	
 	BerryBush berryBush1 = new BerryBush((int)((Math.random()*400)), (int)((Math.random()*430)+70));
-	Berry[] berries = new Berry[MyTimer.increment];
 	
 	
 	
 	//creating objects and object arrays  (STEP 1)
 	private int level = 0;
 	private boolean evo = false;
+	public int berryInt = 0;
+	Berry[] berries = new Berry[7];
 
+	
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
 		bg1.paint(g);
 		lavaPool.paint(g);
 		berryBush1.paint(g);
-	    for(int i = 0; i < berries.length; i++) {
+	    for(int i = 0; i < berryInt/120; i++) {
 	    	berries[i].paint(g);
 	    }
+	   
+		
+	   // if(berryInt % 300 == 0) {
+	   /// 	berries[berryInt%300].paint(g);
+	   // }
+	    
 	    testAnimal.paint(g);
 		
-		
+
 		//time interval for spawn of berries
-		
+	    if(berryInt<2100) {
+			berryInt++;
+		}
 		
 		
 		//trying to make a simple evolution thing
@@ -201,15 +211,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//arrow keys are used for moving pony up and down
 			if(arg0.getKeyCode() == 38) {
 				testAnimal.up();
+				
 			}
 			if(arg0.getKeyCode() == 40) {
 				testAnimal.down();
+				
 			}
 			if(arg0.getKeyCode() == 39) {
 				testAnimal.right();
+				
 			}
 			if(arg0.getKeyCode() == 37) {
 				testAnimal.left();
+				
 			}
 			if(arg0.getKeyCode() == 89) { //press y
 				System.out.println(testAnimal.getY());

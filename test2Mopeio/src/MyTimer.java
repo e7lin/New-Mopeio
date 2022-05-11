@@ -21,6 +21,7 @@ public class MyTimer {
 	public void update() {
 		FixedIntervalRate();
 	}
+	
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		update();
