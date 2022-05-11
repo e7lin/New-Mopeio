@@ -21,8 +21,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Background bg1 = new Background(0,0);
 	Animal testAnimal = new Mouse(100,200);
 	Lava lavaPool = new Lava(600,200);
+	
+	
 	BerryBush berryBush1 = new BerryBush((int)((Math.random()*400)), (int)((Math.random()*430)+70));
-	Berry[] berries = new Berry[7];
+	Berry[] berries = new Berry[MyTimer.increment];
 	
 	
 	
