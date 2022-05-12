@@ -21,9 +21,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Background bg1 = new Background(0,0);
 	Animal testAnimal = new Mouse(100,200);
 	Lava lavaPool = new Lava(600,200);
-	MyTimer test = new MyTimer();
 	
 	BerryBush berryBush1 = new BerryBush((int)((Math.random()*400)), (int)((Math.random()*430)+70));
+	BerryBush berryBush2 = new BerryBush((int)((Math.random()*480)+440), (int)((Math.random()*300)+510));
+	BerryBush berryBush3 = new BerryBush((int)((Math.random()*300)+1450), (int)((Math.random()*800)+70));
 	
 	
 	
@@ -31,7 +32,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private int level = 0;
 	private boolean evo = false;
 	public int berryInt = 0;
-	Berry[] berries = new Berry[7];
+	Berry[] berries = new Berry[8];
+	Berry[] berries2 = new Berry[8];
+	Berry[] berries3 = new Berry[8];
+
 
 	
 	public void paint(Graphics g) { //The code under this method paints the objects
@@ -39,22 +43,46 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		bg1.paint(g);
 		lavaPool.paint(g);
 		berryBush1.paint(g);
+		berryBush2.paint(g);
+		berryBush3.paint(g);
+
 	    for(int i = 0; i < berryInt/120; i++) {
+	    	//berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+	    	//berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
 	    	berries[i].paint(g);
+	    	berries2[i].paint(g);
+	    	berries3[i].paint(g);
+	    	
+	    	if(testAnimal.getX() +60 >= berries[i].getX() && testAnimal.getX() <= berries[i].getX() && testAnimal.getY() <= berries[i].getY() && testAnimal.getY()+100 >= berries[i].getY() ) {
+	    		berries[i].setX(10000);
+	    		berries[i].setY(10000);
+	    	}
+	    	if(testAnimal.getX() + 60 >= berries2[i].getX() && testAnimal.getX() <= berries2[i].getX() && testAnimal.getY() <= berries2[i].getY() && testAnimal.getY()+100 >= berries2[i].getY() ) {
+	    		berries2[i].setX(10000);
+	    		berries2[i].setY(10000);
+	    	}
+	    	if(testAnimal.getX() + 60 >= berries3[i].getX() && testAnimal.getX() <= berries3[i].getX() && testAnimal.getY() <= berries3[i].getY() && testAnimal.getY()+100 >= berries3[i].getY() ) {
+	    		berries3[i].setX(10000);
+	    		berries3[i].setY(10000);
+	    	}
+	    	
 	    }
 	   
-		
+
+	    
 	   // if(berryInt % 300 == 0) {
 	   /// 	berries[berryInt%300].paint(g);
 	   // }
+	    
+
 	    
 	    testAnimal.paint(g);
 		
 
 		//time interval for spawn of berries
-	    if(berryInt<2100) {
-			berryInt++;
-		}
+	    if(berryInt<840) {
+	    	berryInt++;
+	    }
 		
 		
 		//trying to make a simple evolution thing
@@ -66,6 +94,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(20);
+			berryInt = 0;
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 			System.out.println(testAnimal.getHP());
 		}else if(level == 2 && evo) {
 			Animal temp = new Pig(testAnimal.getX(), testAnimal.getY());
@@ -118,8 +155,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		//end of evolution code
 		
-		
-		if(testAnimal.getHP() == 0) {
+		//supposed to make animal die???
+		if(testAnimal.getHP() <= 0) {
 			g.setFont(g.getFont().deriveFont(150f));
 			
 			g.fillRect(650, 500, 750, 200);
@@ -140,8 +177,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 	}//end of paint
 	
-	
-	
+	public void resetBerry() {
+		
+	}
 	
 	public static void main(String[] arg) {
 		Frame f = new Frame();
@@ -154,7 +192,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		for(int i = 0; i < berries.length; i++) {
 			int xValue = (int)(Math.random()*150) + berryBush1.getX();
 			int yValue = (int)(Math.random()*150) + berryBush1.getY();
-		    berries[i] = new Berry(xValue, yValue);
+		    berries[i] = new Berry(xValue,yValue);
+		}
+		
+		for(int i = 0; i < berries.length; i++) {
+			int xValue = (int)(Math.random()*150) + berryBush2.getX();
+			int yValue = (int)(Math.random()*150) + berryBush2.getY();
+		    berries2[i] = new Berry(xValue, yValue);
+		}
+		
+		for(int i = 0; i < berries.length; i++) {
+			int xValue = (int)(Math.random()*150) + berryBush3.getX();
+			int yValue = (int)(Math.random()*150) + berryBush3.getY();
+		    berries3[i] = new Berry(xValue, yValue);
 		}
 		
 		JFrame f = new JFrame("Mopeio");
@@ -249,7 +299,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 			
 	}
-	
 	
 
 	@Override
