@@ -1,6 +1,6 @@
 # New-Mopeio
 
-####### Introduction
+###### Introduction
 
 We were inspired by the Mopeio game, a game that is pretty popular online and involves animals interacting on a map. Based off of that game, we made this version, which 
 is arguably simpler, but also varied in its execution. 
