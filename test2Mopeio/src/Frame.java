@@ -68,7 +68,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	
 	    }
 	   
-
+	    
 	    
 	   // if(berryInt % 300 == 0) {
 	   /// 	berries[berryInt%300].paint(g);
@@ -86,9 +86,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		
 		//trying to make a simple evolution thing
-		if(level == 0) {
+		if(level == 0 && evo) {
 			testAnimal.setHP(10);
-
+			Animal temp = new Mouse(testAnimal.getX(), testAnimal.getY());
+			testAnimal = temp;
+			evo = false;
 		}else if(level == 1 && evo) {
 			Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
@@ -109,49 +111,121 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(30);
+			berryInt = 0;
 
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}else if(level == 3 && evo) {
 			Animal temp = new Otter(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(40);
+			berryInt = 0;
 
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}else if(level == 4 && evo) {
 			Animal temp = new Vulture(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(50);
+			berryInt = 0;
 
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}else if(level == 5 && evo) {
 			Animal temp = new Buffalo(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(60);
+			berryInt = 0;
 
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}else if(level == 6 && evo) {
 			Animal temp = new Hippo(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(70);
-
+			berryInt = 0;
+			
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}else if(level == 7 && evo) {
 			Animal temp = new Tiger(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(80);
+			berryInt = 0;
 
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}else if(level == 8 && evo) {
 			Animal temp = new Lion(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(90);
+			berryInt = 0;
 
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}else if(level == 9 && evo) {
 			Animal temp = new Dragon(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(100);
+			berryInt = 0;
 
+			for(int i = 0; i<7; i++) {
+				berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
+				berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
+				berries2[i].setX((int)(Math.random()*150) + berryBush2.getX());
+				berries2[i].setY((int)(Math.random()*150) + berryBush2.getY());
+				berries3[i].setX((int)(Math.random()*150) + berryBush3.getX());
+				berries3[i].setY((int)(Math.random()*150) + berryBush3.getY());
+			}
 		}
 		//end of evolution code
 		
@@ -163,6 +237,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Color c = new Color(237, 0, 0);
 			g.setColor(c);
 			g.drawString("You Died!", 700,650);
+			testAnimal.setVx(0);
+			testAnimal.setVy(0);
+			//level = 0;
+			//evo = true;
 		}
 		
 		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440 && level != 6 && level != 3 && level != 1) {
@@ -170,21 +248,30 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal.setVy(3);
 
 			//testAnimal.setVy(1);
-		}else {
+		}else if(testAnimal.getHP( )> 0) {
 			testAnimal.setVx(10);
 			testAnimal.setVy(10);
 		}
 		
 	}//end of paint
 	
-	public void resetBerry() {
-		
-	}
+/*	public void resetBerry(int[] arr, int[] arr2, int[] arr3, BerryBush b1, BerryBush b2, BerryBush b3) {
+		for(int i = 0; i<7; i++) {
+			arr[i].setX((int)(Math.random()*150) + b1.getX());
+			arr[i].setY((int)(Math.random()*150) + b1.getY());
+			arr2[i].setX((int)(Math.random()*150) + b2.getX());
+			arr2[i].setY((int)(Math.random()*150) + b2.getY());
+			arr3[i].setX((int)(Math.random()*150) + b3.getX());
+			arr3[i].setY((int)(Math.random()*150) + b3.getY());
+		}
+	}*/
 	
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 		
 	}
+	
+	
 	
 	public Frame() {
 		// 70 to 500 for first berry bush x; y will be from 70 down to 500
@@ -293,7 +380,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			if(arg0.getKeyCode() == 67) { //press c to decrement hp 10
 				testAnimal.setHP(testAnimal.getHP()-10);
 				System.out.println("ouch");
-
+				
 				System.out.println(testAnimal.getHP());
 				
 			}

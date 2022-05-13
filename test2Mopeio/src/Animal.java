@@ -10,7 +10,7 @@ public class Animal {
 		public int x,y;
 		private int vy = 10;
 		private String fileName;
-		private int hp;
+		private int hp = 10;
 		private int vx = 10;
 
 		//for image stuff
