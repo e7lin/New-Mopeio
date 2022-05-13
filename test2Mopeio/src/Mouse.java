@@ -101,8 +101,6 @@ public void update() {
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
 
-	
-	
 
 	if(y+130>1000) {
 		y-=10;

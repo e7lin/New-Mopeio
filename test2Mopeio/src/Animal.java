@@ -7,6 +7,11 @@ import java.net.URL;
 
 public class Animal {
 	//attributes
+	
+	//test for commit
+	//test 2
+	
+	
 		public int x,y;
 		private int vy = 10;
 		private String fileName;
