@@ -21,9 +21,18 @@ We used the concept of inheritance throughout the Animal classes, creating an An
 
 #### BerryBush Class
 
+The berry bushes themselves, though there is a constant number of three of them in certain areas of the map, are randomly spawned within those certain blocks or areas. 
+This is accomplished through nested loops that create a berry bush object and in relation to their environment use the Math.random method for both x and y location to generate the coordinates of the berry bush on the map.
+
 #### Background Class
+
+Ethan drew the background class, which was mainly depicting a river and a set of berry bushes, along with a green plain where the animals move around in. There is also a lake present. The animals that are not accustomed to swimming are slowed in the river, but the other animals, such as the sea otter and those that can fly, are not slowed. The background currently is stationary and not open-world, but if time permits we will be adding at least three more environments in a sort of 2x2 grid format, with a lava/volcano environment, a forest environment, an airspace environment in addition to the green plains environment. Animals cannot go beyond the boundary of the game window due to if statements that are based on the position of animals relative to their surroundings, using a getter method for their position. 
 
 #### Berry Class
 
+Berries are randomly spawned, alng with the random spawn of the berry bushes, to be around the bushes so that they are eaten when other animals collide with them, after which they disappear and are eaten. Once an animal eats enough stuffs to get enough experience points, they are able to evolve to the next level of animal. For example, the first evolution would be from a mouse to a frog. Based on the coordinates of the berry bush, the berries are randomly generated within a determined radius where they are close enough to the bush. 
+
 #### Carrot Class
+
+Carrots are very similar to berries, other than that their spawning is based on the location of the river, which in itself is constant. 
 
