@@ -36,3 +36,11 @@ Berries are randomly spawned, alng with the random spawn of the berry bushes, to
 
 Carrots are very similar to berries, other than that their spawning is based on the location of the river, which in itself is constant. 
 
+
+### Methods
+
+#### Getters and Setters
+
+#### Update
+
+#### 
