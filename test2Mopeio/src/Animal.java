@@ -9,6 +9,7 @@ public class Animal {
 	//attributes
 	
 	//test for commit
+	//test 2
 	
 	
 		public int x,y;
