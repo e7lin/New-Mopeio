@@ -32,10 +32,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private int level = 0;
 	private boolean evo = false;
 	public int berryInt = 0;
+	public int carrotInt = 0;
 	Berry[] berries = new Berry[8];
 	Berry[] berries2 = new Berry[8];
 	Berry[] berries3 = new Berry[8];
-	Carrot[] carrots = new Carrot[10];
+	Carrot[] carrots = new Carrot[40];
+	Carrot[] carrots2 = new Carrot[40];
+
 	
 	
 	public void paint(Graphics g) { //The code under this method paints the objects
@@ -52,7 +55,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	berries[i].paint(g);
 	    	berries2[i].paint(g);
 	    	berries3[i].paint(g);
-	    	carrots[i].paint(g);
+	    	
 	    	
 	    	if(testAnimal.getX() +60 >= berries[i].getX() && testAnimal.getX() <= berries[i].getX() && testAnimal.getY() <= berries[i].getY() && testAnimal.getY()+100 >= berries[i].getY() ) {
 	    		berries[i].setX(10000);
@@ -69,6 +72,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	
 	    }
 	   
+	    for(int i = 0; i < carrotInt/300; i++) {
+	    	carrots[i].paint(g);
+	    	carrots2[i].paint(g);
+	    	
+	    	if(testAnimal.getX() +80 >= carrots[i].getX() && testAnimal.getX() <= carrots[i].getX() && testAnimal.getY()-20 <= carrots[i].getY() && testAnimal.getY()+75 >= carrots[i].getY() ) {
+	    		carrots[i].setX(10000);
+	    		carrots[i].setY(10000);
+	    	}
+	    	if(testAnimal.getX() +80 >= carrots2[i].getX() && testAnimal.getX() <= carrots2[i].getX() && testAnimal.getY()-20 <= carrots2[i].getY() && testAnimal.getY()+75 >= carrots2[i].getY() ) {
+	    		carrots2[i].setX(10000);
+	    		carrots2[i].setY(10000);
+	    	}
+	    }
 	    
 	    
 	   // if(berryInt % 300 == 0) {
@@ -84,7 +100,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    if(berryInt<840) {
 	    	berryInt++;
 	    }
-		
+		if(carrotInt<12000) {
+			carrotInt++;
+		}
 		
 		//trying to make a simple evolution thing
 		if(level == 0 && evo) {
@@ -296,9 +314,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		
 		for(int i = 0; i < carrots.length; i++) {
-			int xValue = (int)(Math.random()*150);
-			int yValue = (int)(Math.random()*150);
+			int xValue = (int)(Math.random()*50) + 1050;
+			int yValue = (int)(Math.random()*900)+50;
 		    carrots[i] = new Carrot(xValue, yValue);
+		}
+		
+		for(int i = 0; i < carrots.length; i++) {
+			int xValue = (int)(Math.random()*50) + 1400;
+			int yValue = (int)(Math.random()*900)+50;
+		    carrots2[i] = new Carrot(xValue, yValue);
 		}
 		
 		JFrame f = new JFrame("Mopeio");
