@@ -33,13 +33,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private boolean evo = false;
 	public int berryInt = 0;
 	public int carrotInt = 0;
+	public int exp = 0;
 	Berry[] berries = new Berry[8];
 	Berry[] berries2 = new Berry[8];
 	Berry[] berries3 = new Berry[8];
 	Carrot[] carrots = new Carrot[40];
 	Carrot[] carrots2 = new Carrot[40];
-
-	
+	Meat[] meat = new Meat[20];
 	
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
@@ -60,14 +60,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	if(testAnimal.getX() +60 >= berries[i].getX() && testAnimal.getX() <= berries[i].getX() && testAnimal.getY() <= berries[i].getY() && testAnimal.getY()+100 >= berries[i].getY() ) {
 	    		berries[i].setX(10000);
 	    		berries[i].setY(10000);
+	    		exp+=5;
 	    	}
 	    	if(testAnimal.getX() + 60 >= berries2[i].getX() && testAnimal.getX() <= berries2[i].getX() && testAnimal.getY() <= berries2[i].getY() && testAnimal.getY()+100 >= berries2[i].getY() ) {
 	    		berries2[i].setX(10000);
 	    		berries2[i].setY(10000);
+	    		exp+=5;
+
 	    	}
 	    	if(testAnimal.getX() + 60 >= berries3[i].getX() && testAnimal.getX() <= berries3[i].getX() && testAnimal.getY() <= berries3[i].getY() && testAnimal.getY()+100 >= berries3[i].getY() ) {
 	    		berries3[i].setX(10000);
 	    		berries3[i].setY(10000);
+	    		exp+=5;
 	    	}
 	    	
 	    }
@@ -75,14 +79,24 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    for(int i = 0; i < carrotInt/300; i++) {
 	    	carrots[i].paint(g);
 	    	carrots2[i].paint(g);
+	    	if(i%2 == 0) {
+	    		meat[i].paint(g);
+	    	}
 	    	
 	    	if(testAnimal.getX() +80 >= carrots[i].getX() && testAnimal.getX() <= carrots[i].getX() && testAnimal.getY()-20 <= carrots[i].getY() && testAnimal.getY()+75 >= carrots[i].getY() ) {
 	    		carrots[i].setX(10000);
 	    		carrots[i].setY(10000);
+	    		exp+= 10;
 	    	}
 	    	if(testAnimal.getX() +80 >= carrots2[i].getX() && testAnimal.getX() <= carrots2[i].getX() && testAnimal.getY()-20 <= carrots2[i].getY() && testAnimal.getY()+75 >= carrots2[i].getY() ) {
 	    		carrots2[i].setX(10000);
 	    		carrots2[i].setY(10000);
+	    		exp+= 10;
+	    	}
+	    	if(testAnimal.getX() +80 >= meat[i].getX() && testAnimal.getX() <= meat[i].getX() && testAnimal.getY()-20 <= meat[i].getY() && testAnimal.getY()+75 >= meat[i].getY() ) {
+	    		meat[i].setX(10000);
+	    		meat[i].setY(10000);
+	    		exp+= 100;
 	    	}
 	    }
 	    
@@ -247,7 +261,52 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 		}
 		//end of evolution code
+		if(exp >50  && level == 0) {
+			level++;
+			evo = true;
+		}else if(exp > 150  && level == 1) {
+			level++;
+			evo = true;
+		}else if(exp > 275 && level == 2) {
+			level++;
+			evo = true;
+		}else if(exp > 400  && level == 3) {
+			level++;
+			evo = true;
+		}else if(exp > 550 && level == 4) {
+			level++;
+			evo = true;
+		}else if(exp > 675&& level == 5) {
+			level++;
+			evo = true;
+		}else if(exp > 800  && level == 6) {
+			level++;
+			evo = true;
+		}else if(exp > 1000 && level == 7) {
+			level++;
+			evo = true;
+		}
 		
+		/*
+		 * Mouse: 0 to 50
+
+	Frog: 50 - 150
+
+Pig: 150 - 275
+
+Otter: 275 - 400
+
+Vulture: 400 to 550
+
+Buffalo: 550 - 675
+
+Tiger: 675 - 800
+
+Lion: 800- 1000
+
+Dragon: 1000 + 
+
+		 */
 		//supposed to make animal die???
 		if(testAnimal.getHP() <= 0) {
 			g.setFont(g.getFont().deriveFont(150f));
@@ -323,6 +382,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			int xValue = (int)(Math.random()*50) + 1400;
 			int yValue = (int)(Math.random()*900)+50;
 		    carrots2[i] = new Carrot(xValue, yValue);
+		}
+		
+		for(int i = 0; i < meat.length; i++) {
+			int xValue = (int)(Math.random()*1800) + 50;
+			int yValue = (int)(Math.random()*900)+50;
+		    meat[i] = new Meat(xValue, yValue);
 		}
 		
 		JFrame f = new JFrame("Mopeio");
@@ -401,8 +466,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 
 			if(arg0.getKeyCode() == 83) { //press s to evolve, for testing
-				level++;
-				evo = true;
+				exp+=100;
 			}
 			if(arg0.getKeyCode() == 68) { //press D to decrease 1 evolution, for testing
 				level--;
