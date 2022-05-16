@@ -35,8 +35,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Berry[] berries = new Berry[8];
 	Berry[] berries2 = new Berry[8];
 	Berry[] berries3 = new Berry[8];
-
-
+	Carrot[] carrots = new Carrot[10];
+	
 	
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
@@ -52,6 +52,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	berries[i].paint(g);
 	    	berries2[i].paint(g);
 	    	berries3[i].paint(g);
+	    	carrots[i].paint(g);
 	    	
 	    	if(testAnimal.getX() +60 >= berries[i].getX() && testAnimal.getX() <= berries[i].getX() && testAnimal.getY() <= berries[i].getY() && testAnimal.getY()+100 >= berries[i].getY() ) {
 	    		berries[i].setX(10000);
@@ -292,6 +293,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			int xValue = (int)(Math.random()*150) + berryBush3.getX();
 			int yValue = (int)(Math.random()*150) + berryBush3.getY();
 		    berries3[i] = new Berry(xValue, yValue);
+		}
+		
+		for(int i = 0; i < carrots.length; i++) {
+			int xValue = (int)(Math.random()*150);
+			int yValue = (int)(Math.random()*150);
+		    carrots[i] = new Carrot(xValue, yValue);
 		}
 		
 		JFrame f = new JFrame("Mopeio");
