@@ -8,8 +8,10 @@ We created this game based off the Mope.io game, a popular game that revolves ar
 ### Classes
 
 #### Background Class
+The background is currently not open-world, containing a set environment with a river, a lake, and pretty much a grassland. It was also drawn using pixelart maker. If time permits, there is a possibility that we will create four distinct background "environments" that are organized in a sort of 2 by 2 grid, with the three additional environments being a desert environment, a volcano environment, and a jungle environment, each of which potentially suits a particular type of animal by food source and movement limitations(for example land animals are set to be slowed in the river).
 
 #### Animal Classes
+As mentioned before, there are ten animals that each inherit methods, instance variables, and a constructor from the overaching parent class, which is the Animal class. The animals range from a mouse to a dragon, each requiring a set number of experience points to be gained before evolution takes place. Once the experience level is passed, the animal evolves to the next one in the progression. 
 
 #### BerryBush Class
 The berry bush is a sort of "spawner" around which berries spawn. The berry bushes themselves have a random spawning coordinate system based on a set range of boxed x and y values on the background. The Math.random method is used to achieve this randomization of coordinates for each of the x and y coordinates. The same process was used for the spawning of the berry objects and the carrot objects.
