@@ -21,6 +21,9 @@ This is an eatable object in the game, through which after an animal "collides" 
 #### Carrot Class
 This is another eatable object class in the game, very similar to the berry class. The key differences are that the carrots spawn near the river, which has set coordinates, and as a result have less variation even after the Math.random method is used. Carrots spawn at a slower rate and provide more experience points for the animals than berries do on a one-to-one comparison level. 
 
+#### Meat Class
+This is yet another eatable object in the game, but the animals that can eat it are much more restricted. Just like in real life, depending on whether an animal is an omnivore, a carnivore, or an herbivore, their food sources are correspondingly limited in our game implementation of them. As such, only the pig, otter, vulture, hippo, tiger, lion, and dragon animal types 
+
 ### Methods
 
 #### Getters and Setters
@@ -32,3 +35,5 @@ This is another eatable object class in the game, very similar to the berry clas
 #### Movement methods
 
 #### getKeyCode methods
+
+Just like for other games/projects we have completed, the methods KeyPressed and getKeyCode were utilized to map keys on the keyboard to movement of the animal. We mapped the arrow key movement to that of the animals, utilizing four different orientations of each animal to facilitate the appearance of movement in any cardinal direction corresponding to what arrow key was pressed. 
