@@ -31,6 +31,7 @@ This is yet another eatable object in the game, but the animals that can eat it 
 #### Math.random
 
 #### Paint method and Update method
+The paint method refreshes 60 times per second and was very useful to update the positions and spawning of the visual graphics of the game so that it appeared much more fluid and smooth in terms of gameplay. This is something we definitely utilized to make sure that all of the objects instantiated were inputted into the game and something we also took into account when coding the spawning of the berries and other eatable objects in intervals. 
 
 #### Movement methods
 
