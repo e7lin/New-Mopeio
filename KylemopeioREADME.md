@@ -29,6 +29,7 @@ This is yet another eatable object in the game, but the animals that can eat it 
 #### Getters and Setters
 
 #### Math.random
+The Math.random method was used several times throughout this project. This was the method used for determing the random spawning of the berry bushes, the berries, the carrots, the fish, the mushrooms, and the meat. It was essential to ensuring the game had the aspect of change and variation in different play throughs and was not something that was hard coded so that the same exact layout and movements could be strictly followed every time. 
 
 #### Paint method and Update method
 The paint method refreshes 60 times per second and was very useful to update the positions and spawning of the visual graphics of the game so that it appeared much more fluid and smooth in terms of gameplay. This is something we definitely utilized to make sure that all of the objects instantiated were inputted into the game and something we also took into account when coding the spawning of the berries and other eatable objects in intervals. 
