@@ -276,13 +276,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}else if(exp > 550 && level == 4) {
 			level++;
 			evo = true;
-		}else if(exp > 675&& level == 5) {
+		}else if(exp > 675 && level == 5) {
 			level++;
 			evo = true;
 		}else if(exp > 800  && level == 6) {
 			level++;
 			evo = true;
 		}else if(exp > 1000 && level == 7) {
+			level++;
+			evo = true;
+		}else if(exp > 1000 && level == 8) {
 			level++;
 			evo = true;
 		}
