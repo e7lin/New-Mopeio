@@ -469,7 +469,8 @@ Dragon: 1000 +
 			}
 
 			if(arg0.getKeyCode() == 83) { //press s to evolve, for testing
-				exp+=100;
+				level++;
+				evo = true;
 			}
 			if(arg0.getKeyCode() == 68) { //press D to decrease 1 evolution, for testing
 				level--;
