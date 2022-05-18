@@ -39,7 +39,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Berry[] berries3 = new Berry[8];
 	Carrot[] carrots = new Carrot[40];
 	Carrot[] carrots2 = new Carrot[40];
-	Meat[] meat = new Meat[20];
+	Meat[] meat = new Meat[40];
 	
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
@@ -264,51 +264,54 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(exp >50  && level == 0) {
 			level++;
 			evo = true;
-		}else if(exp > 150  && level == 1) {
+		}else if(exp >= 50  && level == 1) {
 			level++;
 			evo = true;
-		}else if(exp > 275 && level == 2) {
+		}else if(exp >= 125 && level == 2) {
 			level++;
 			evo = true;
-		}else if(exp > 400  && level == 3) {
+		}else if(exp >= 225  && level == 3) {
 			level++;
 			evo = true;
-		}else if(exp > 550 && level == 4) {
+		}else if(exp >= 350 && level == 4) {
 			level++;
 			evo = true;
-		}else if(exp > 675 && level == 5) {
+		}else if(exp > 474 && level == 5) {
 			level++;
 			evo = true;
-		}else if(exp > 800  && level == 6) {
+		}else if(exp > 599  && level == 6) {
 			level++;
 			evo = true;
-		}else if(exp > 1000 && level == 7) {
+		}else if(exp > 749 && level == 7) {
 			level++;
 			evo = true;
-		}else if(exp > 1000 && level == 8) {
+		}else if(exp > 899 && level == 8) {
+			level++;
+			evo = true;
+		}else if(exp > 1099 && level == 9) {
 			level++;
 			evo = true;
 		}
-		
 		/*
-		 * Mouse: 0 to 50
+ 		Mouse: 0 to 50 0
 
-	Frog: 50 - 150
+		Frog: 50 - 125 1
 
-Pig: 150 - 275
+		Pig: 125 - 225 2 
 
-Otter: 275 - 400
+		Otter: 225 - 350 3
 
-Vulture: 400 to 550
+		Vulture: 350 to 475 4 
 
-Buffalo: 550 - 675
+		Buffalo: 475- 600 5 
 
-Tiger: 675 - 800
+		Hippo: 600 - 750
 
-Lion: 800- 1000
+		Tiger: 750 - 900 6 
 
-Dragon: 1000 + 
+		Lion: 900 - 1100 7
 
+		Dragon: 1100 + 
 		 */
 		//supposed to make animal die???
 		if(testAnimal.getHP() <= 0) {
@@ -443,9 +446,34 @@ Dragon: 1000 +
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-			System.out.println(arg0.getKeyCode());
+			
+			switch(arg0.getKeyCode()) {
+				case 38:
+					testAnimal.up();
+					break;
+				case 40:
+					testAnimal.down();
+					break;
+				case 39:
+					testAnimal.right();
+					break;
+				case 37:
+					testAnimal.left();
+					break;
+				case 83:
+					level++;
+					evo = true;
+					break;
+				case 68:
+					level--;
+					evo = true;
+					break;
+				
+			}
+		
+		System.out.println(arg0.getKeyCode());
 			//arrow keys are used for moving pony up and down
-			if(arg0.getKeyCode() == 38) {
+			/*if(arg0.getKeyCode() == 38) {
 				testAnimal.up();
 				
 			}
@@ -482,7 +510,7 @@ Dragon: 1000 +
 				
 				System.out.println(testAnimal.getHP());
 				
-			}
+			}*/
 			
 	}
 	
