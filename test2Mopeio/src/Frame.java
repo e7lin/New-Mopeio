@@ -41,6 +41,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Carrot[] carrots2 = new Carrot[40];
 	Meat[] meat = new Meat[40];
 	
+	private int counter = 0;
+	private int tick = 0;
+	
 	public void paint(Graphics g) { //The code under this method paints the objects
 		super.paintComponent(g);
 		bg1.paint(g);
@@ -48,7 +51,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		berryBush1.paint(g);
 		berryBush2.paint(g);
 		berryBush3.paint(g);
+		
+		g.drawLine(900, 200, 900, 500);
+		g.drawLine(600, 200, 600, 500);
+		g.drawLine(600, 200, 900, 200);
+		g.drawLine(600, 500, 900, 500);
 
+
+
+		
 	    for(int i = 0; i < berryInt/120; i++) {
 	    	//berries[i].setX((int)(Math.random()*150) + berryBush1.getX());
 	    	//berries[i].setY((int)(Math.random()*150) + berryBush1.getY());
@@ -100,13 +111,25 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	}
 	    }
 	    
+	    //tick
+	    
+	    if(counter < 2000000000) {
+	    	counter ++;
+	    	if(counter%60 == 0) { //tick 1 second
+	    		//tick++;
+	    		if(testAnimal.getX() > 600 && testAnimal.getX() + 100 < 900 && testAnimal.getY()>200 && testAnimal.getY() +100 < 500) {
+	    			testAnimal.setHP(testAnimal.getHP()-10);
+	    		}
+	    	}
+	    }
+	    
+	    
 	    
 	   // if(berryInt % 300 == 0) {
 	   /// 	berries[berryInt%300].paint(g);
 	   // }
 	    
-
-	    
+	   
 	    testAnimal.paint(g);
 		
 
