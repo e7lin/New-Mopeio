@@ -35,7 +35,7 @@ The Math.random method was used several times throughout this project. This was 
 The paint method refreshes 60 times per second and was very useful to update the positions and spawning of the visual graphics of the game so that it appeared much more fluid and smooth in terms of gameplay. This is something we definitely utilized to make sure that all of the objects instantiated were inputted into the game and something we also took into account when coding the spawning of the berries and other eatable objects in intervals. 
 
 #### Movement methods
-We had four movement methods: up, down, left, and right. Each one of them moves the animal 10 pixels in the corresponding cardinal direction. The movement is restricted by if statements so that the animal does not go off screen.
+We had four movement methods: up, down, left, and right. Each one of them moves the animal 10 pixels in the corresponding cardinal direction. The movement is restricted by if statements so that the animal does not go off screen. However, for the movement itself, we utilizing the keycodes and adapted the if statements to switch statements after we learned about them. The four cases are the corresponding keycodes for the up, down, left, and right arrow keys. 
 
 #### getKeyCode methods
 
