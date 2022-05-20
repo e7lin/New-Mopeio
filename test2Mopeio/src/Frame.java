@@ -60,7 +60,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.drawLine(600, 200, 900, 200);
 		g.drawLine(600, 500, 900, 500);
 
-
+		Color c2 = new Color(255, 136, 136);
+		g.setColor(c2);
+		g.fillRect(10, 10, 10*testAnimal.getHP(), 10);
+		Color c3 = new Color(255,255,255);
+		g.setColor(c3);
+		g.setFont(g.getFont().deriveFont(25f));
+		g.drawString("Healthbar ^", 10, 40);
 
 		
 	    for(int i = 0; i < berryInt/120; i++) {
@@ -140,7 +146,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    			testAnimal.setVx(2);
 	    			testAnimal.setVy(2);
 	    			testAnimal.setHP(testAnimal.getHP()-10);
-	    			
 	    		}else {
 	    			lava = false;
 	    		}
