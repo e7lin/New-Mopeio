@@ -30,6 +30,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	//creating objects and object arrays  (STEP 1)
 	private boolean lava = false;
+	private boolean mouseA = false;
+	private boolean abilityActivate = false;
+	private int abilityTimer = 0;
 	private int level = 0;
 	private boolean evo = false;
 	public int berryInt = 0;
@@ -59,14 +62,21 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.drawLine(600, 200, 600, 500);
 		g.drawLine(600, 200, 900, 200);
 		g.drawLine(600, 500, 900, 500);
-
+		
+		
+		
 		Color c2 = new Color(255, 136, 136);
 		g.setColor(c2);
-		g.fillRect(10, 10, 10*testAnimal.getHP(), 10);
-		Color c3 = new Color(255,255,255);
-		g.setColor(c3);
-		g.setFont(g.getFont().deriveFont(25f));
-		g.drawString("Healthbar ^", 10, 40);
+		g.fillRect(10, 30, 10*testAnimal.getHP(), 10);
+		Color c4 = new Color(0,0,0);
+		g.setColor(c4);
+		g.setFont(g.getFont().deriveFont(30f));
+		g.drawString("Healthbar :", 10, 25);
+		if(abilityTimer<10) {
+		g.drawString("Time until ability: " + (10-abilityTimer), 10, 65);
+		}else {
+			g.drawString("Ability ready" , 10, 65);
+		}
 
 		
 	    for(int i = 0; i < berryInt/120; i++) {
@@ -135,20 +145,41 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	}
 	    }
 	    
+	    g.drawRect(testAnimal.getX(), testAnimal.getY(), 100, 100);
+	    
 	    //tick
+	    
+	   
+	    if(testAnimal.getX() +100> 600 && testAnimal.getX() + 50 < 900 && testAnimal.getY()+100 >200 && testAnimal.getY() +50 < 500 && level != 9 ) {
+			lava = true;
+			testAnimal.setVx(2);
+			testAnimal.setVy(2);
+		}else {
+			lava = false;
+		}
+	    
 	    
 	    if(counter < 2000000000) {
 	    	counter ++;
+	    	if(mouseA) {
+	    		g.drawString("squeek", testAnimal.getX()+100, testAnimal.getY());
+				g.drawString("squeek", testAnimal.getX()-10, testAnimal.getY()+25);
+				g.drawString("squeek", testAnimal.getX()+75, testAnimal.getY()+50);
+				if(abilityTimer > 3) {
+					mouseA = false;
+				}
+	    		
+	    	}
 	    	if(counter%30 == 0) { //tick .5 second
 	    		//tick++;
-	    		if(testAnimal.getX() +50> 600 && testAnimal.getX() + 100 < 900 && testAnimal.getY()+50 >200 && testAnimal.getY() +100 < 500 && level != 9) {
-	    			lava = true;
-	    			testAnimal.setVx(2);
-	    			testAnimal.setVy(2);
+	    		if(lava) {
 	    			testAnimal.setHP(testAnimal.getHP()-10);
-	    		}else {
-	    			lava = false;
 	    		}
+	    	}
+	    	
+	    	if(counter%60 == 0) { //tick 1 second
+		    	abilityTimer++;
+		    	
 	    	}
 	    }
 	    
@@ -161,7 +192,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	   
 	    testAnimal.paint(g);
 		
-
+	    
 		//time interval for spawn of berries
 	    if(berryInt<12000) {
 	    	berryInt++;
@@ -287,6 +318,44 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			level++;
 			evo = true;
 		}
+		
+		
+		if(abilityTimer>=10 && abilityActivate) {
+			switch(level) {
+			case 0:
+				mouseA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				break;
+			}
+		}
+		
+		//abilities?
+		
+		
+		
+		
+		
+		
+		
 		/*
  		Mouse: 0 to 50 0
 
@@ -468,6 +537,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					level--;
 					evo = true;
 					break;
+				case 32:
+					//spacebar
+					if(abilityTimer>10) {
+					abilityActivate = true;
+					}
+					break;
+					
 				
 			}
 		
