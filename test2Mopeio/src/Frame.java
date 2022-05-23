@@ -33,6 +33,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private boolean mouseA = false;
 	private boolean abilityActivate = false;
 	private int abilityTimer = 0;
+	int tempX;
+	int tempY;
+	
 	private int level = 0;
 	private boolean evo = false;
 	public int berryInt = 0;
