@@ -24,6 +24,8 @@ This is another eatable object class in the game, very similar to the berry clas
 #### Meat Class
 This is yet another eatable object in the game, but the animals that can eat it are much more restricted. Just like in real life, depending on whether an animal is an omnivore, a carnivore, or an herbivore, their food sources are correspondingly limited in our game implementation of them. As such, only the pig, otter, vulture, hippo, tiger, lion, and dragon animal types 
 
+#### Mushroom Class
+
 ### Methods
 
 #### Getters and Setters
