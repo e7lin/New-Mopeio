@@ -43,3 +43,10 @@ We had four movement methods: up, down, left, and right. Each one of them moves 
 
 Just like for other games/projects we have completed, the methods KeyPressed and getKeyCode were utilized to map keys on the keyboard to movement of the animal. We mapped the arrow key movement to that of the animals, utilizing four different orientations of each animal to facilitate the appearance of movement in any cardinal direction corresponding to what arrow key was pressed. 
 
+### Collision
+
+## Game Rules and Regulations
+
+## Support
+
+## Credits and Acknowledgement 
