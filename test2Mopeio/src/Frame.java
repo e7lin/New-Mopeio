@@ -19,7 +19,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//declaring variables
 	Random rnd = new Random();
 	Background bg1 = new Background(0,0);
-	Animal testAnimal = new Mouse(100,200);
+	static Animal testAnimal = new Mouse(100,200);
+	public static int returnAnimalHP(Animal test) {
+   	    return test.getHP();
+     }
 	Lava lavaPool = new Lava(600,200);
 	
 	BerryBush berryBush1 = new BerryBush((int)((Math.random()*400)), (int)((Math.random()*430)+70));
