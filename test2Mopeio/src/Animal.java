@@ -15,7 +15,7 @@ public class Animal {
 		public int x,y;
 		private int vy = 10;
 		private String fileName;
-		private int hp = 10;
+		private static int hp = 10;
 		private int vx = 10;
 
 		//for image stuff
@@ -42,7 +42,7 @@ public class Animal {
 			tx.scale(scaleW, scaleH);
 		}
 		
-		public int getHP() {
+		public static int getHP() {
 			return hp;
 		}
 		public void setVx(int newVx) {
