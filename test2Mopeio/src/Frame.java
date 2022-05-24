@@ -213,11 +213,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Animal temp = new Mouse(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(20);
+
 		}else if(level == 1 && evo) {
+			testAnimal.setHP(20);
+
 			Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
-			testAnimal.setHP(20);
+			
 			for(int i = 0; i<7; i++) {
 				
 			}
