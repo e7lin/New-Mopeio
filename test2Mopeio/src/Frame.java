@@ -32,7 +32,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	BerryBush berryBush2 = new BerryBush((int)((Math.random()*480)+440), (int)((Math.random()*300)+510));
 	BerryBush berryBush3 = new BerryBush((int)((Math.random()*300)+1450), (int)((Math.random()*800)+70));
 	
-	
+	//test
 	
 	//creating objects and object arrays  (STEP 1)
 	private boolean lava = false;
