@@ -19,7 +19,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//declaring variables
 	Random rnd = new Random();
 	Background bg1 = new Background(0,0);
-	static Animal testAnimal = new Mouse(100,200);
+	Animal testAnimal = new Mouse(100,200);
+	
+	Animal testAnimal2 = new Mouse(200,200);
+
 	public static int returnAnimalHP(Animal test) {
    	    return test.getHP();
      }
@@ -63,7 +66,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		berryBush1.paint(g);
 		berryBush2.paint(g);
 		berryBush3.paint(g);
-		
+		testAnimal.paint(g);
+	  //  testAnimal2.paint(g);
 		g.drawLine(900, 200, 900, 500);
 		g.drawLine(600, 200, 600, 500);
 		g.drawLine(600, 200, 900, 200);
@@ -196,7 +200,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	   // }
 	    
 	   
-	    testAnimal.paint(g);
+	    
 		
 	    
 		//time interval for spawn of berries
@@ -213,14 +217,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Animal temp = new Mouse(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
-			testAnimal.setHP(20);
 
 		}else if(level == 1 && evo) {
-			testAnimal.setHP(20);
-
 			Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
+			testAnimal.setHP(20);
+
 			
 			for(int i = 0; i<7; i++) {
 				
@@ -540,12 +543,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					testAnimal.left();
 					break;
 				case 83:
-					level++;
-					evo = true;
+					testAnimal2.down();
+					break;
+				case 87:
+					testAnimal2.up();
+					break;
+				case 65:
+					testAnimal2.left();
 					break;
 				case 68:
-					level--;
-					evo = true;
+					testAnimal2.right();
 					break;
 				case 32:
 					//spacebar
@@ -555,6 +562,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					break;
 					
 				
+					
 			}
 		
 		System.out.println(arg0.getKeyCode());

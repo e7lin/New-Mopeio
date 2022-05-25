@@ -10,7 +10,6 @@ public class Frog extends Animal{
 	public int x,y;
 	private int vx = 10;
 	private int vy = 10;
-	private static int hp;
 
 	private String fileName;
 	
@@ -38,13 +37,6 @@ public class Frog extends Animal{
 		tx.scale(scaleW, scaleH);
 	}
 	
-	public static int getHP() {
-		return hp;
-	}
-	
-	public void setHP(int newHP) {
-		hp = newHP;
-	}
 	public int getX() {//getter (accessor)
 		return x;
 	}
@@ -108,7 +100,7 @@ public void update() {
 		
 	tx.setToTranslation(x, y);
 	tx.scale(1	, 1);
-	
+
 	
 	
 
