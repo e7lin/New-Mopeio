@@ -21,7 +21,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Background bg1 = new Background(0,0);
 	Animal testAnimal = new Mouse(100,200);
 	
-	Animal testAnimal2 = new Mouse(200,200);
+//	Animal testAnimal2 = new Mouse(200,200); doesn't work
 
 	public static int returnAnimalHP(Animal test) {
    	    return test.getHP();
@@ -543,16 +543,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					testAnimal.left();
 					break;
 				case 83:
-					testAnimal2.down();
+					//testAnimal2.down();
 					break;
 				case 87:
-					testAnimal2.up();
+					//testAnimal2.up();
 					break;
 				case 65:
-					testAnimal2.left();
+					//testAnimal2.left();
 					break;
 				case 68:
-					testAnimal2.right();
+					//testAnimal2.right();
 					break;
 				case 32:
 					//spacebar
