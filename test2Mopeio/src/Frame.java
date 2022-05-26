@@ -37,6 +37,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//creating objects and object arrays  (STEP 1)
 	private boolean lava = false;
 	private boolean mouseA = false;
+	private boolean frogA = false; //tongue
+	private boolean pigA = false; //carrot sprint
+	private boolean seaOtterA = false; //fish
+	private boolean vultureA = false; // fly
+	private boolean buffaloA = false; // charge
+	private boolean hippoA = false; //chompWide
+	private boolean tigerA = false; // meat cadaver
+	private boolean lionA = false; //lion pride
+	private boolean dragonA = false; // dragon poggers :()
 	private boolean speed = false;
 	private boolean abilityActivate = false;
 	private int abilityTimer = 0;
