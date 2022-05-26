@@ -37,6 +37,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//creating objects and object arrays  (STEP 1)
 	private boolean lava = false;
 	private boolean mouseA = false;
+	private boolean frogA = false;
 	private boolean abilityActivate = false;
 	private int abilityTimer = 0;
 	int tempX;
@@ -54,7 +55,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Carrot[] carrots2 = new Carrot[40];
 	Meat[] meat = new Meat[40];
 	Mushroom[] shrooms = new Mushroom[40]; //maybe poison status effect?
-
+	
 	
 	private int counter = 0;
 	private int tick = 0;
@@ -66,7 +67,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		berryBush1.paint(g);
 		berryBush2.paint(g);
 		berryBush3.paint(g);
-		testAnimal.paint(g);
 	  //  testAnimal2.paint(g);
 		g.drawLine(900, 200, 900, 500);
 		g.drawLine(600, 200, 600, 500);
@@ -96,13 +96,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	berries2[i].paint(g);
 	    	berries3[i].paint(g);
 	    		
-	    	/*berryint = 0;
-	    	 * if(testAnimal.getX() +80 >= meat[i].getX() && testAnimal.getX() <= meat[i].getX() && testAnimal.getY()-20 <= meat[i].getY() && testAnimal.getY()+75 >= meat[i].getY() ) {
-	    		meat[i].setX(10000);
-	    		meat[i].setY(10000);
-	    		exp+= 25;
-	    	}
-	    	 */
 	    	
 	    	
 	    
@@ -178,6 +171,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				if(abilityTimer > 3) {
 					mouseA = false;
 				}
+			if(frogA) {
+				g.drawString("ribbit", testAnimal.getX()+100, testAnimal.getY());
+				g.drawString("ribbit", testAnimal.getX()-10, testAnimal.getY()+25);
+				g.drawString("ribbit", testAnimal.getX()+75, testAnimal.getY()+50);
+				
+				if(abilityTimer >1) {
+					frogA = false;
+				}
+			}
 	    		
 	    	}
 	    	if(counter%30 == 0) { //tick .5 second
@@ -194,14 +196,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    }
 	    
 	    
-	    
+		testAnimal.paint(g);
+
 	   // if(berryInt % 300 == 0) {
 	   /// 	berries[berryInt%300].paint(g);
 	   // }
 	    
 	   
-	    
-		
 	    
 		//time interval for spawn of berries
 	    if(berryInt<12000) {
@@ -341,6 +342,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				abilityActivate = !abilityActivate;
 				break;
 			case 1:
+				
 				break;
 			case 2:
 				break;
