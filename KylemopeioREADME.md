@@ -45,11 +45,23 @@ Just like for other games/projects we have completed, the methods KeyPressed and
 
 ### Collisions
 
-#### Animals and Food
+We primarily involved four types of collisions in the game. These each are extremely significant to the gameplay of the game and also the game interactions. Each is fundamentally a collision(in which there is a certain if statement encoded that results in a certain event happening if the animal and that object are "overlapping" with each other, or in terms of the code sharing the same range of coordinates with each other). 
 
-#### Animals and Lava
+#### Animals and Food Stuffs
 
-#### Animals and Water
+As mentioned before, when the animals "collide" with and eat food stuffs, whether they be the meat, berries, or carrots, the experience points of the animal go up, corresponding to the specific experience points associated with each type of foodstuffs. When experience points cross a certain threshold, evolution occurs in which an animal involves into the next animal in the progression(i.e. a mouse into a frog).
+
+#### SHROOOOMS
+
+Another type of collision is that of the tele-shroom, which when eaten randomly teleports the animal into a set of coordinates on the background. This could be advantageous, such as when an animal that cannot "swim" quickly across the river, such as a mouse, is able to teleport across the river. However, the animal could also be teleported into the river, or, even worse, into the lava pool. 
+
+#### Animals and Lava :()
+
+The third type of collision is that of the animals and the lava pool, which both slows down the animal(similar to the river) and causes them to lose health points(HP) tick by tick if they stay in the lava pool for too long. This effectively kills animals very quickly, though the Dragon is immune to dying in the lava pool, as it is a fire dragon and not affected.
+
+#### Animals and River :((
+
+The final type of collision is that of the animals and the river. The river slows down animals that cannot swim across it quickly, which are all the animals except the frog, sea otter, and hippo. 
 
 ## Game Rules and Regulations
 
