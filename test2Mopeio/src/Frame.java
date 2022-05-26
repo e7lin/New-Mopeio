@@ -37,10 +37,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//creating objects and object arrays  (STEP 1)
 	private boolean lava = false;
 	private boolean mouseA = false;
-	private boolean frogA = false;
+	private boolean speed = false;
 	private boolean abilityActivate = false;
 	private int abilityTimer = 0;
 	int tempX;
+	private int temp = 0;
 	int tempY;
 	//test2
 	private int level = 0;
@@ -55,6 +56,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Carrot[] carrots2 = new Carrot[40];
 	Meat[] meat = new Meat[40];
 	Mushroom[] shrooms = new Mushroom[40]; //maybe poison status effect?
+	Orange[] oranges = new Orange[40];
 	
 	
 	private int counter = 0;
@@ -124,6 +126,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	if(i%2 == 0) {
 	    		meat[i].paint(g);
 	    		shrooms[i].paint(g); //should make some kind of poison effect for shroom
+	    		g.setFont(g.getFont().deriveFont(16f));
+	    		g.drawString("tele-shroom", shrooms[i].getX()-10, shrooms[i].getY()+50);
+	    		
+	    		
+	    	}
+	    	if(i%3== 0) {
+	    		oranges[i].paint(g); //sppedd
+	    		g.setFont(g.getFont().deriveFont(16f));
+	    		g.drawString("speedy orange", oranges[i].getX()-10, oranges[i].getY()+50);
 	    	}
 	    	
 	    	if(testAnimal.getX() +80 >= carrots[i].getX() && testAnimal.getX() <= carrots[i].getX() && testAnimal.getY()-20 <= carrots[i].getY() && testAnimal.getY()+75 >= carrots[i].getY() ) {
@@ -136,15 +147,32 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    		carrots2[i].setY(10000);
 	    		exp+= 10;
 	    	}
+	    	
+	    	
+	    	if(level != 0 && level != 5) {
 	    	if(testAnimal.getX() +80 >= meat[i].getX() && testAnimal.getX() <= meat[i].getX() && testAnimal.getY()-20 <= meat[i].getY() && testAnimal.getY()+75 >= meat[i].getY() ) {
 	    		meat[i].setX(10000);
 	    		meat[i].setY(10000);
 	    		exp+= 25;
 	    	}
+	    	}
+	    	
+	    	
+	    	
 	    	if(testAnimal.getX() +80 >= shrooms[i].getX() && testAnimal.getX() <= shrooms[i].getX() && testAnimal.getY()-20 <= shrooms[i].getY() && testAnimal.getY()+75 >= shrooms[i].getY() ) {
 	    		shrooms[i].setX(10000);
 	    		shrooms[i].setY(10000);
-	    		//exp+= 25;???
+	    		exp+= 15;
+	    		testAnimal.setX((int)((Math.random()*1800)));
+	    		testAnimal.setY((int)((Math.random()*900)));
+	    	}
+	    	
+	    	if(testAnimal.getX() +80 >= oranges[i].getX() && testAnimal.getX() <= oranges[i].getX() && testAnimal.getY()-20 <= oranges[i].getY() && testAnimal.getY()+75 >= oranges[i].getY() ) {
+	    		oranges[i].setX(10000);
+	    		oranges[i].setY(10000);
+	    		exp+= 15;
+	    		speed = true;
+	    		
 	    	}
 	    }
 	    
@@ -171,17 +199,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				if(abilityTimer > 3) {
 					mouseA = false;
 				}
-			if(frogA) {
-				g.drawString("ribbit", testAnimal.getX()+100, testAnimal.getY());
-				g.drawString("ribbit", testAnimal.getX()-10, testAnimal.getY()+25);
-				g.drawString("ribbit", testAnimal.getX()+75, testAnimal.getY()+50);
-				
-				if(abilityTimer >1) {
-					frogA = false;
-				}
-			}
-	    		
 	    	}
+	    	
+	    	
 	    	if(counter%30 == 0) { //tick .5 second
 	    		//tick++;
 	    		if(lava) {
@@ -191,6 +211,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	
 	    	if(counter%60 == 0) { //tick 1 second
 		    	abilityTimer++;
+		    	
+		    	
 		    	
 	    	}
 	    }
@@ -218,12 +240,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Animal temp = new Mouse(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
-
+			speed = false;
 		}else if(level == 1 && evo) {
 			Animal temp = new Frog(testAnimal.getX(), testAnimal.getY());
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(20);
+			speed = false;
 
 			
 			for(int i = 0; i<7; i++) {
@@ -235,6 +258,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(30);
+			speed = false;
 
 			for(int i = 0; i<7; i++) {
 				
@@ -244,6 +268,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(40);
+			speed = false;
 
 			for(int i = 0; i<7; i++) {
 				
@@ -253,6 +278,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(50);
+			speed = false;
 
 			for(int i = 0; i<7; i++) {
 				
@@ -262,6 +288,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(60);
+			speed = false;
 
 			for(int i = 0; i<7; i++) {
 				
@@ -271,7 +298,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(70);
-			
+			speed = false;
+
 			for(int i = 0; i<7; i++) {
 				
 			}
@@ -280,6 +308,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(80);
+			speed = false;
 
 			for(int i = 0; i<7; i++) {
 				
@@ -289,6 +318,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(90);
+			speed = false;
 
 			for(int i = 0; i<7; i++) {
 				
@@ -298,6 +328,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			testAnimal = temp;
 			evo = false;
 			testAnimal.setHP(100);
+			speed = false;
 
 			for(int i = 0; i<7; i++) {
 				
@@ -363,35 +394,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 		}
 		
-		//abilities?
-		
-		
-		
-		
-		
-		
-		
-		/*
- 		Mouse: 0 to 50 0
-
-		Frog: 50 - 125 1
-
-		Pig: 125 - 225 2 
-
-		Otter: 225 - 350 3
-
-		Vulture: 350 to 475 4 
-
-		Buffalo: 475- 600 5 
-
-		Hippo: 600 - 750
-
-		Tiger: 750 - 900 6 
-
-		Lion: 900 - 1100 7
-
-		Dragon: 1100 + 
-		 */
+	
+	
 		//supposed to make animal die???
 		if(testAnimal.getHP() <= 0) {
 			g.setFont(g.getFont().deriveFont(150f));
@@ -406,34 +410,25 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//evo = true;
 		}
 		
-		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440 && level != 6 && level != 3 && level != 1 && level != 4 && level != 9) {
+		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440 && level != 6 && level != 3 && level != 1 && level != 4 && level != 9 && !speed) {
 			testAnimal.setVx(3);
 			testAnimal.setVy(3);
 
 			//testAnimal.setVy(1);
-		}else if(testAnimal.getHP( )> 0 && !lava) {
+		}else if(testAnimal.getHP( )> 0 && !lava && !speed) {
 			testAnimal.setVx(10);
 			testAnimal.setVy(10);
+		}else if(speed) {
+			testAnimal.setVx(15);
+			testAnimal.setVy(15);
 		}
 	}//end of paint
 	
-/*	public void resetBerry(int[] arr, int[] arr2, int[] arr3, BerryBush b1, BerryBush b2, BerryBush b3) {
-		for(int i = 0; i<7; i++) {
-			arr[i].setX((int)(Math.random()*150) + b1.getX());
-			arr[i].setY((int)(Math.random()*150) + b1.getY());
-			arr2[i].setX((int)(Math.random()*150) + b2.getX());
-			arr2[i].setY((int)(Math.random()*150) + b2.getY());
-			arr3[i].setX((int)(Math.random()*150) + b3.getX());
-			arr3[i].setY((int)(Math.random()*150) + b3.getY());
-		}
-	}*/
-	
+
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 		
 	}
-	
-	
 	
 	public Frame() {
 		// 70 to 500 for first berry bush x; y will be from 70 down to 500
@@ -475,9 +470,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		
 		for(int i = 0; i < meat.length; i++) {
-			int xValue = (int)(Math.random()*1800) + 50;
-			int yValue = (int)(Math.random()*900)+50;
+			int xValue = (int)(Math.random()*1700) + 50;
+			int yValue = (int)(Math.random()*800)+50;
 		    shrooms[i] = new Mushroom(xValue, yValue);
+		}
+		
+		for(int i = 0; i < oranges.length; i++) {
+			int xValue = (int)(Math.random()*1700) + 50;
+			int yValue = (int)(Math.random()*800)+50;
+		    oranges[i] = new Orange(xValue, yValue);
 		}
 		
 		JFrame f = new JFrame("Mopeio");
