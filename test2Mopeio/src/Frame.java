@@ -36,6 +36,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	//creating objects and object arrays  (STEP 1)
 	private boolean lava = false;
+	
+	//boolean variables that set off abilities
+	//set off of ability timers
 	private boolean mouseA = false;
 	private boolean frogA = false; //tongue
 	private boolean pigA = false; //carrot sprint
@@ -179,7 +182,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    	if(testAnimal.getX() +80 >= oranges[i].getX() && testAnimal.getX() <= oranges[i].getX() && testAnimal.getY()-20 <= oranges[i].getY() && testAnimal.getY()+75 >= oranges[i].getY() ) {
 	    		oranges[i].setX(10000);
 	    		oranges[i].setY(10000);
-	    		exp+= 15;
+	    		exp += 15;
 	    		speed = true;
 	    		
 	    	}
@@ -209,9 +212,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					mouseA = false;
 				}
 	    	}
+	    	if(frogA) {
+	    		//g.drawRect(testAnimal.getX() + 30, testAnimal.getY(), 50, 100);
+	    	}
 	    	
-	    	
-	    	if(counter%30 == 0) { //tick .5 second
+	    	if(counter%60 == 0) { //tick 1 second increments
 	    		//tick++;
 	    		if(lava) {
 	    			testAnimal.setHP(testAnimal.getHP()-10);
@@ -239,6 +244,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	    if(berryInt<12000) {
 	    	berryInt++;
 	    }
+	    
 		if(carrotInt<12000) {
 			carrotInt++;
 		}
@@ -382,23 +388,49 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				abilityActivate = !abilityActivate;
 				break;
 			case 1:
-				
+				frogA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 2:
+				pigA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 3:
+				seaOtterA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 4:
+				vultureA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 5:
+				buffaloA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 6:
+				hippoA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 7:
+				tigerA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 8:
+				lionA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			case 9:
+				dragonA = true;
+				abilityTimer = 0;
+				abilityActivate = !abilityActivate;
 				break;
 			}
 		}
@@ -419,6 +451,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//evo = true;
 		}
 		
+		//river slowing animals
 		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440 && level != 6 && level != 3 && level != 1 && level != 4 && level != 9 && !speed) {
 			testAnimal.setVx(3);
 			testAnimal.setVy(3);
@@ -572,6 +605,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					abilityActivate = true;
 					}
 					break;
+				case 82:
+					//r key
+					//doesn't work as intended
+					//for the reset of the entire game
+					exp = 0;
+					level = 0;
+					//berryInt = 0;
+					//carrotInt = 0;
+					Animal temp = new Mouse(100, 200);
+					testAnimal = temp;
+					counter = 0;
+					abilityTimer = 0;
 					
 				
 					
