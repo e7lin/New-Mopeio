@@ -55,17 +55,26 @@ As mentioned before, when the animals "collide" with and eat food stuffs, whethe
 
 Another type of collision is that of the tele-shroom, which when eaten randomly teleports the animal into a set of coordinates on the background. This could be advantageous, such as when an animal that cannot "swim" quickly across the river, such as a mouse, is able to teleport across the river. However, the animal could also be teleported into the river, or, even worse, into the lava pool. 
 
-#### Animals and Lava :()
+#### Animals and Lava 
 
 The third type of collision is that of the animals and the lava pool, which both slows down the animal(similar to the river) and causes them to lose health points(HP) tick by tick if they stay in the lava pool for too long. This effectively kills animals very quickly, though the Dragon is immune to dying in the lava pool, as it is a fire dragon and not affected.
 
-#### Animals and River :((
+#### Animals and River 
 
 The final type of collision is that of the animals and the river. The river slows down animals that cannot swim across it quickly, which are all the animals except the frog, sea otter, and hippo. 
 
 ## Game Rules and Regulations
 
-## Support
+This game is relatively simple. There are just a few basic rules that are common to many other games. 
+1. Eat as much food as quickly as possible, moving with up, down, left, and right arrow keys
+2. Stay out of the lava and outside boundaries(prevented with if statements checking for animal positions outside of boundaries)
+3. Become a dragon to advance
 
+## Support
+We will likely not be providing support, updates, or significant changes to this game in the future, as we do not feel like there is any particular inspiration or drive to make this game significantly better when it is largely based off Mope.io and similar games like Agar.io. While this is not inherently a bad aspect, there are so many of these types of games and as a result there is not a real point in continuing with the game's development.
+It was a great learning experience to practice concepts we learned in this class, however, including switch statements, reading/writing files, inheritance,
+and many others.
 
 ## Credits and Acknowledgement 
+Ethan Lin did a significant portion of the coding, utilizing classes from the quarter 2 project to start for the base of the player classes and developing from there. He drew the backgrounds and many of the food stuffs, while also continuing by contributing to the coding of the animal classes and completing
+the collisions for the animals eating food and interacting with the lava and river. Sri did a part of the coding, mainly the reset button and reading/writing, while also completing the Read.me. Special thanks to Mr. David and Nisheet for helping through the many Github issues that we encountered. 
