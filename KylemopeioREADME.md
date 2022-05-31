@@ -67,7 +67,7 @@ As mentioned before, when the animals "collide" with and eat food stuffs, whethe
 
 Another type of collision is that of the tele-shroom, which when eaten randomly teleports the animal into a set of coordinates on the background. This could be advantageous, such as when an animal that cannot "swim" quickly across the river, such as a mouse, is able to teleport across the river. However, the animal could also be teleported into the river, or, even worse, into the lava pool. 
 
-![This is an image](shroomsWorking.gif)
+![This is an image](ezgif.com-gif-maker.gif)
 
 #### Animals and Lava 
 
@@ -91,4 +91,4 @@ and many others.
 
 ## Credits and Acknowledgement 
 Ethan Lin did a significant portion of the coding, utilizing classes from the quarter 2 project to start for the base of the player classes and developing from there. He drew the backgrounds and many of the food stuffs, while also continuing by contributing to the coding of the animal classes and completing
-the collisions for the animals eating food and interacting with the lava and river. Sri did a part of the coding, mainly the reset button and reading/writing, while also completing the Read.me. Special thanks to Mr. David and Nisheet for helping through the many Github issues that we encountered. 
+the collisions for the animals eating food and interacting with the lava and river. Sri did a part of the coding, mainly the reset button and reading/writing, while also completing the Read.me. Special thanks to Mr. David and Nisheet for helping through the many Github issues that we encountered. Shoutout Kyle Wang for inspiring the name of our game.  
