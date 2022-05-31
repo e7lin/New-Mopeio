@@ -28,6 +28,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
      }
 	Lava lavaPool = new Lava(600,200);
 	
+	//These are random coordinate positions and object declarations and instantiations for the berry bushes.
+	
 	BerryBush berryBush1 = new BerryBush((int)((Math.random()*400)), (int)((Math.random()*430)+70));
 	BerryBush berryBush2 = new BerryBush((int)((Math.random()*480)+440), (int)((Math.random()*300)+510));
 	BerryBush berryBush3 = new BerryBush((int)((Math.random()*300)+1450), (int)((Math.random()*800)+70));
@@ -213,9 +215,20 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				}
 	    	}
 	    	if(frogA) {
-	    		//g.drawRect(testAnimal.getX() + 30, testAnimal.getY(), 50, 100);
+	    		
+	    		g.setColor(c4);
+	    		g.fillOval(testAnimal.getX()-100, testAnimal.getY()-100, 300, 300);
+	    	
+	    		
+	    		if(abilityTimer>3) {
+	    			frogA = false;
+	    		}
+	    	}
+	    	if(pigA) {
+	    		
 	    	}
 	    	
+	   
 	    	if(counter%60 == 0) { //tick 1 second increments
 	    		//tick++;
 	    		if(lava) {
@@ -451,7 +464,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//evo = true;
 		}
 		
-		//river slowing animals
+		//river slowing animals, exceptions are made for animals that swim, including their corresponding
+		//levels
 		if(testAnimal.getX() >=1020 && testAnimal.getX()<=1440 && level != 6 && level != 3 && level != 1 && level != 4 && level != 9 && !speed) {
 			testAnimal.setVx(3);
 			testAnimal.setVy(3);
@@ -573,6 +587,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
+		
+		/*This is a set of associated keycodes set up with a corresponding method or statement by a key 
+		 * getting pressed. They are set up with switch statements for each of the cases, which are used
+		 * for up, down, left, and right movements for the animal character, as well as other keys. One
+		 * example is the keycoded reset button, which resets the game once r is pressed.
+		 */
 			
 			switch(arg0.getKeyCode()) {
 				case 38:
@@ -607,17 +627,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 					break;
 				case 82:
 					//r key
-					//doesn't work as intended
+					//Pretty sure it works
 					//for the reset of the entire game
-					exp = 0;
-					level = 0;
 					//berryInt = 0;
 					//carrotInt = 0;
 					Animal temp = new Mouse(100, 200);
+					temp.setHP(10);
+					level=0;
+					exp=0;
 					testAnimal = temp;
-					counter = 0;
 					abilityTimer = 0;
-					
+					berryInt = 0;
+					carrotInt = 0;
 				
 					
 			}
