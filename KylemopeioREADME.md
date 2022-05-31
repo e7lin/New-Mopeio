@@ -26,6 +26,11 @@ This is yet another eatable object in the game, but the animals that can eat it 
 
 #### Mushroom Class
 
+This is another eatable object in the game, which instead of providing experience points upon consumption, randomly teleports the animal to a position on the map. This could be advantageous(teleporting an animal across the river) or disadvantageous(teleporting an animal into the river or into the lava).
+
+#### Speedy Orange
+The orange, another eatable, increases the speed of animals for a small amount of time. This helps animals that are slowed in the river to cross it quickly for example.
+
 ### Methods
 
 #### Getters and Setters
@@ -49,6 +54,7 @@ The reset button is triggered by pressing the key R, which completely resets the
 again after they died or if a new trial is wished to be tested by the developers running the game. 
 
 ![This is an image](resetbuttoncsafinalproject.gif)
+
 ### Collisions
 
 We primarily involved four types of collisions in the game. These each are extremely significant to the gameplay of the game and also the game interactions. Each is fundamentally a collision(in which there is a certain if statement encoded that results in a certain event happening if the animal and that object are "overlapping" with each other, or in terms of the code sharing the same range of coordinates with each other). 
@@ -60,6 +66,8 @@ As mentioned before, when the animals "collide" with and eat food stuffs, whethe
 #### SHROOOOMS
 
 Another type of collision is that of the tele-shroom, which when eaten randomly teleports the animal into a set of coordinates on the background. This could be advantageous, such as when an animal that cannot "swim" quickly across the river, such as a mouse, is able to teleport across the river. However, the animal could also be teleported into the river, or, even worse, into the lava pool. 
+
+![This is an image](shroomsWorking.gif)
 
 #### Animals and Lava 
 
