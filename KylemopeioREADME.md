@@ -79,6 +79,8 @@ Another type of collision is that of the tele-shroom, which when eaten randomly 
 
 The third type of collision is that of the animals and the lava pool, which both slows down the animal(similar to the river) and causes them to lose health points(HP) tick by tick if they stay in the lava pool for too long. This effectively kills animals very quickly, though the Dragon is immune to dying in the lava pool, as it is a fire dragon and not affected.
 
+![This is an image](Dyingagain.gif)
+
 #### Animals and River 
 
 The final type of collision is that of the animals and the river. The river slows down animals that cannot swim across it quickly, which are all the animals except the frog, sea otter, and hippo. 
