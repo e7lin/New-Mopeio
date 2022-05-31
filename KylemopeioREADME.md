@@ -43,6 +43,12 @@ We had four movement methods: up, down, left, and right. Each one of them moves 
 
 Just like for other games/projects we have completed, the methods KeyPressed and getKeyCode were utilized to map keys on the keyboard to movement of the animal. We mapped the arrow key movement to that of the animals, utilizing four different orientations of each animal to facilitate the appearance of movement in any cardinal direction corresponding to what arrow key was pressed. 
 
+### Reset button
+
+The reset button is triggered by pressing the key R, which completely resets the game. This is convenient if a player wants to immediately start the game
+again after they died or if a new trial is wished to be tested by the developers running the game. 
+
+![This is an image](resetbuttoncsafinalproject.gif)
 ### Collisions
 
 We primarily involved four types of collisions in the game. These each are extremely significant to the gameplay of the game and also the game interactions. Each is fundamentally a collision(in which there is a certain if statement encoded that results in a certain event happening if the animal and that object are "overlapping" with each other, or in terms of the code sharing the same range of coordinates with each other). 
