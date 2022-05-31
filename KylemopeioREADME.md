@@ -15,6 +15,7 @@ As mentioned before, there are ten animals that each inherit methods, instance v
 #### BerryBush Class
 The berry bush is a sort of "spawner" around which berries spawn. The berry bushes themselves have a random spawning coordinate system based on a set range of boxed x and y values on the background. The Math.random method is used to achieve this randomization of coordinates for each of the x and y coordinates. The same process was used for the spawning of the berry objects and the carrot objects.
 
+![This is an image](Eatingfood.gif)
 #### Berry Class
 This is an eatable object in the game, through which after an animal "collides" or its position overlaps with that of the berry, the berry disappears and is consumed. This corresponds with the animal getting increased experience points, getting closer to evolving into the next animal in the progression. The positions of the berries are randomly spawned using a for loop and an array of berry objects along with the Math.random method. They are set to spawn around the three berry bushes on the map and a maximum of eight will be on a singular bush. 
 
