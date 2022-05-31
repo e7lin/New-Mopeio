@@ -86,6 +86,7 @@ The third type of collision is that of the animals and the lava pool, which both
 
 The final type of collision is that of the animals and the river. The river slows down animals that cannot swim across it quickly, which are all the animals except the frog, sea otter, and hippo. 
 
+![This is an image](Slowinginriver.gif)
 ## Game Rules and Regulations
 
 This game is relatively simple. There are just a few basic rules that are common to many other games. 
