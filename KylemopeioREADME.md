@@ -12,6 +12,8 @@ The background is currently not open-world, containing a set environment with a 
 #### Animal Classes
 As mentioned before, there are ten animals that each inherit methods, instance variables, and a constructor from the overaching parent class, which is the Animal class. The animals range from a mouse to a dragon, each requiring a set number of experience points to be gained before evolution takes place. Once the experience level is passed, the animal evolves to the next one in the progression. 
 
+![This is an image](Evolutionfinal.gif)
+
 #### BerryBush Class
 The berry bush is a sort of "spawner" around which berries spawn. The berry bushes themselves have a random spawning coordinate system based on a set range of boxed x and y values on the background. The Math.random method is used to achieve this randomization of coordinates for each of the x and y coordinates. The same process was used for the spawning of the berry objects and the carrot objects.
 
