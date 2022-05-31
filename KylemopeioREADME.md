@@ -59,6 +59,12 @@ again after they died or if a new trial is wished to be tested by the developers
 
 We primarily involved four types of collisions in the game. These each are extremely significant to the gameplay of the game and also the game interactions. Each is fundamentally a collision(in which there is a certain if statement encoded that results in a certain event happening if the animal and that object are "overlapping" with each other, or in terms of the code sharing the same range of coordinates with each other). 
 
+### Abilities
+
+We added an ability timer and abilities for each of the animals, though this was not completely implemented. This is an example of a mouse ability.
+
+![This is an image](Mouseability.gif)
+
 #### Animals and Food Stuffs
 
 As mentioned before, when the animals "collide" with and eat food stuffs, whether they be the meat, berries, or carrots, the experience points of the animal go up, corresponding to the specific experience points associated with each type of foodstuffs. When experience points cross a certain threshold, evolution occurs in which an animal involves into the next animal in the progression(i.e. a mouse into a frog).
